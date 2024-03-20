@@ -1,0 +1,175 @@
+---
+import HtmlIcon from './icons/Html.astro'
+import CssIcon from './icons/Css.astro'
+import JavascriptIcon from './icons/Javascript.astro'
+import BootstrapIcon from './icons/BootstrapIcon.astro'
+import AngularIcon from './icons/Angular.astro'
+import TailwinIcon from "./icons/Tailwind.astro";
+import TypeScriptIcon from './icons/TypeScriptIcon.astro'
+
+import CSharpIcon from './icons/CSharpIcon.astro'
+import NodeJsIcon from './icons/NodejsIcon.astro'
+import DotNetCoreIcon from './icons/DotNetCore.astro'
+import SQLServerIcon from './icons/SqlServer.astro'
+import ExpressJSIcon from './icons/ExpressJsIcon.astro'
+import MySqlIcon from './icons/MySqlIcon.astro'
+
+import AndroidIcon from './icons/AndroidIcon.astro'
+import KotlinIcon from './icons/KotlinIcon.astro'
+
+import GitHubIcon from './icons/GitHub.astro'
+import VisualStudioIcon from './icons/VisualStudioIcon.astro'
+import VisualStudioCodeIcon from './icons/VisualStudioCodeIcon.astro'
+import AndroidStudioIcon from './icons/AndroidStudioIcon.astro'
+import GitIcon from './icons/GitIcon.astro'
+import NpmIcon from './icons/NpmIcon.astro'
+import AstroIcon from './icons/AstroIcon.astro'
+
+
+ const TECNOLOGIA = [
+  {
+    titulo: 'Frontend',
+    tecnologias: [
+      {
+        nombre: 'HTML',
+        icono: HtmlIcon
+      },
+      {
+        nombre: 'CSS',
+        icono: CssIcon
+      },
+      {
+        nombre: 'Javascript',
+        icono: JavascriptIcon
+      },
+      {
+        nombre: 'Angular',
+        icono: AngularIcon
+      },
+      {
+        nombre: 'Typescript',
+        icono: TypeScriptIcon
+      },
+      {
+        nombre: 'Bootstrap',
+        icono: BootstrapIcon
+      },
+      {
+        nombre: 'Tailwind',
+        icono: TailwinIcon
+      },
+    ]
+  },
+  {
+    titulo: 'Backend',
+    tecnologias: [
+      {
+        nombre: 'C#',
+        icono: CSharpIcon
+      },
+      {
+        nombre: '.Net Core',
+        icono: DotNetCoreIcon
+      },
+      {
+        nombre: 'SQL Server',
+        icono: SQLServerIcon
+      },
+      {
+        nombre: 'NodeJS',
+        icono: NodeJsIcon
+      },
+      {
+        nombre: 'ExpressJS',
+        icono: ExpressJSIcon
+      },
+      {
+        nombre: 'MySQL',
+        icono: MySqlIcon
+      },
+    ] 
+  },
+  {
+    titulo: 'Móvil',
+    tecnologias: [
+      {
+        nombre: 'Android',
+        icono: AndroidIcon
+      },
+      {
+        nombre: 'Kotlin',
+        icono: KotlinIcon
+      }
+    ] 
+  },
+  {
+    titulo: 'Herramientas',
+    tecnologias: [
+      {
+        nombre: 'Visual Studio',
+        icono: VisualStudioIcon
+      },
+      {
+        nombre: 'Visual Studio Code',
+        icono: VisualStudioCodeIcon
+      },
+      {
+        nombre: 'Android Studio',
+        icono: AndroidStudioIcon
+      },
+      {
+        nombre: 'Git',
+        icono: GitIcon
+      },
+      {
+        nombre: 'GitHub',
+        icono: GitHubIcon
+      },
+      {
+        nombre: 'npm',
+        icono: NpmIcon
+      }
+    ] 
+  },
+  {
+    titulo: 'Aprendiendo',
+    tecnologias: [
+      {
+        nombre: 'Astro',
+        icono: AstroIcon
+      },
+      
+    ] 
+  }
+ ]
+---
+
+{
+  TECNOLOGIA.map(
+    ({titulo, tecnologias}) => (
+    <article
+  class="relative rounded-2xl p-6 dark:border dark:border-dark-900 bg-gradient-to-r dark:from-dark-950 dark:to-black shadow-2xl overflow-hidden false">
+  <div
+    class="pointer-events-none absolute -inset-px opacity-0 transition duration-300"
+    style="opacity: 0; background: radial-gradient(600px at 347px 40.0156px, rgba(255, 182, 255, 0.1), transparent 40%);">
+  </div>
+  <h3
+    class="text-center mb-8 text-xl font-bold lg:text-4xl lg:break-words bg-gradient-to-t from-[#54fbff] to-[#00a4c9] dark:from-[#c9fffe] dark:to-[#00cfef] bg-clip-text text-transparent">
+    {titulo}
+  </h3>
+  <ul class="grid grid-cols-3 gap-4"> 
+  {
+     tecnologias.map((tecnologia) => (
+      <li class="rounded-2xl group flex flex-col fle justify-center items-center">
+          <tecnologia.icono class="size-12 mb-2"/>
+            
+          
+          <span class="text-sm w-full text-center">{tecnologia.nombre}</span>
+       </li>
+    ))
+  }
+  </ul>
+</article>
+
+  ))
+}

@@ -1,0 +1,35 @@
+---
+import ExperienceItem from "./ExperienciaItem.astro";
+
+const EXPERIENCE = [
+  {
+    date: "Octubre 2021 - Actualmente",
+    title: "CrediCompras",
+    workPosition: "Analista Programador",
+    description:
+      "Me encargo de mejorar y agregar características a los sistemas existentes, así como del desarrollo de sistemas nuevos. Tengo experiencia destacada en la utilización de ASP WebForms y SQL Server. Además, cuento con habilidades en el desarrollo de aplicaciones Android utilizando Kotlin. Asimismo, he liderado la creación de proyectos innovadores utilizando .NET Core y Angular.",
+    place: "CrediCompras S.A",
+  },
+  {
+    date: "Junio 2020 - Septiembre 2021",
+    title: "CrediCompras",
+    workPosition: "Pasantía Programador jr",
+    description:
+      "Colaboré en el desarrollo de un sistema web con terminal móvil para el control y seguimiento de proyectos en Muebles Indecargo S.A., como parte de mi tesis. Mis responsabilidades abarcaron la ingeniería de requerimientos, el modelado de sistemas con UML y la implementación de la metodología UWE y Mobile D.",
+      place: "Muebles Indecargo",
+  },
+];
+---
+
+<ol class="relative border-l border-dark-400 dark:border-dark-700 ml-4">                  
+    
+    {
+        EXPERIENCE.map(experience => (
+        <li class="mb-8 md:mb-6 ml-6 ">
+            <ExperienceItem {... experience}/>
+        </li>
+
+        ))
+    }
+
+</ol>

@@ -1,0 +1,102 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import Linkedin from "../components/icons/Linkedin.astro";
+import GitHub from "../components/icons/GitHub.astro";
+import SocialPill from "../components/SocialPill.astro";
+import Mail from "../components/icons/Mail.astro";
+import Experience from "../components/Experiencia.astro";
+import Projects from "../components/Proyectos.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Tecnologias from "../components/Tecnologias.astro"
+---
+
+<Layout
+  title="Porfolio de Julio | Full Stack Developer"
+  description="Contrata a juliodev para crear tu aplicación web o móvil."
+>
+  <main class="px-2">
+    <SectionContainer class="py-24 pb-24">
+      <img
+        class="rounded-full size-24 mb-4"
+        src="https://avatars.githubusercontent.com/u/45950953?s=400&u=57da1b95e9f36f7813cc62d20e375a6f0dabfa9a&v=4"
+        alt="julio dev photo"
+      />
+      <h1
+        class="text-white text-3xl lg:text-5xl md:text-4xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-2"
+      >
+        Hola, <span class="text-cyan-600 dark:text-cyan-400">soy Julio</span>
+        <a
+          href="https://www.linkedin.com/in/juliosancheyi/"
+          target="_blank"
+          rel="noopener"
+          class="flex justify-center items-center"
+        >
+          <div class="flex justify-center items-center">
+            <Badge>Disponible para trabajar</Badge>
+          </div>
+        </a>
+      </h1>
+
+      <span
+        class="animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent text-2xl font-black"
+        >Desarrollador Fullstack
+        </span
+      >
+      <h2 class="text-2xl text-wrap lg:text-2xl max-w-[700px] pt-10">
+        +2 años de experiencia, <span class="text-yellow-200/90 opacity-80"
+          >Ingeniero en Ciencias de la Computación y Desarrollador de Software.</span
+        >
+        Especializado en el diseño y desarrollo de soluciones tecnológicas creativas
+        e innovadoras
+      </h2>
+
+      <nav class="flex gap-4 mt-8 flex-wrap">
+        <SocialPill href="https://www.linkedin.com/in/juliosancheyi/">
+          <Linkedin class="size-4 md:size-6" />
+          LinkedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/JulioSancheZS">
+          <GitHub class="size-4 md:size-6" />
+          GitHub
+        </SocialPill>
+      
+      </nav>
+    </SectionContainer>
+
+    <SectionContainer id="experiencia" class="py-16 pb-10">
+      <h2 class="text-4xl font-semibold mb-4 flex gap-x-2 items-center">
+        Experiencia Laboral
+      </h2>
+      <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="proyectos" class="py-16 pb-10">
+      <h2 class="text-4xl font-semibold mb-4 flex gap-x-2 items-center">
+        Proyectos
+      </h2>
+      <Projects />
+
+      <div class="hidden md:flex bottom-4 w-full justify-center">
+        <a
+          href="https://github.com/JulioSancheZS"
+		  target="_blank"
+          class="md:flex gap-2 animate-bounce text-sky-400 dark:text-sky-400 font-bold"
+          >Mas Proyectos
+		  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
+			<path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
+		  </svg>   
+		</a>
+      </div>
+    </SectionContainer>
+    <SectionContainer id="tecnologias" class="py-16 pb-10">
+      <h2 class="text-4xl font-semibold mb-4 flex gap-x-2 items-center">
+        Tecnologías
+      </h2>
+      <div class="grid lg:grid-cols-2 lg:grid-rows-2 gap-6 lg:place-content-center">
+        <Tecnologias></Tecnologias>
+      </div>
+    </SectionContainer>
+  </main>
+</Layout>

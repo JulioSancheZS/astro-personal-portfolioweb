@@ -1,0 +1,127 @@
+---
+import AngularIcon from "./icons/Angular.astro";
+import TailwinIcon from "./icons/Tailwind.astro";
+import DotNetCoreIcon from "./icons/DotNetCore.astro";
+import SqlServer from "./icons/SqlServer.astro";
+import LinkButton from "./LinkButton.astro";
+import GitHub from "./icons/GitHub.astro";
+import HtmlIcon from './icons/Html.astro'
+import CssIcon from './icons/Css.astro'
+import JavaScriptIcon from './icons/Javascript.astro'
+import AstroIcon from './icons/AstroIcon.astro'
+
+import { Image } from 'astro:assets';
+import PortafolioImg from '../assets/portafolioProyecto.png';
+import AppGastos from '../assets/appgastos.png';
+
+
+const TAGS = {
+  ANGULAR: {
+    name: "Angular",
+    class: "text-white bg-stone-900",
+    icon: AngularIcon,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: TailwinIcon,
+  },
+  DOTNETCORE: {
+    name: ".Net Core",
+    class: "text-white bg-black",
+    icon: DotNetCoreIcon,
+  },
+  SQLSERVER: {
+    name: "SQL Server",
+    class: "text-white bg-black",
+    icon: SqlServer,
+  },
+  HTML: {
+    name: 'Html',
+    class:'text-white bg-black',
+    icon: HtmlIcon
+  },
+  CSS: {
+    name: 'Css',
+    class:'text-white bg-black',
+    icon: CssIcon
+  },
+  JAVASCRIPT: {
+    name: 'Javascript',
+    class:'text-white bg-black',
+    icon: JavaScriptIcon
+  },
+  ASTRO: {
+    name:'Astro',
+    class:'text-white bg-stone-900',
+    icon: AstroIcon
+  }
+};
+
+const PROJECTS = [
+  {
+    title: "App gastos",
+    description:
+      "La aplicación ofrece una experiencia intuitiva para gestionar tus finanzas. Con una interfaz amigable, puedes registrar ingresos, gastos y establecer presupuestos personalizados para un control total y decisiones financieras informadas.",
+    link: "#",
+    github: "#",
+    image:
+    AppGastos.src,
+    tags: [TAGS.DOTNETCORE, TAGS.SQLSERVER, TAGS.ANGULAR, TAGS.TAILWIND],
+    typeProject: "Full Stack",
+  },
+  {
+    title: "Mi Portfolio",
+    description:
+      "Portafolio web!",
+    link: "#",
+    github: "#",
+    image: PortafolioImg.src,
+    tags: [ TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.TAILWIND, TAGS.ASTRO],
+    typeProject: "Frontend",
+  },
+];
+---
+
+<div class="grid md:grid-cols-4 gap-4 mt-6">
+  {
+     PROJECTS.map(
+      ({ image, title, description, link, github, tags, typeProject }) => (
+
+  <div class="relative bg-dark-100 shadow dark:shadow-primary-50/10 dark:bg-dark-900 w-full rounded-3xl min-h-[340px] md:col-span-2 p-1 group overflow-hidden"
+    ><figure class="w-full rounded-3xl overflow-hidden">
+      <img
+        class="w-full h-full min-h-[232px] object-cover group-hover:scale-105 group-hover:brightness-110 transition-all duration-300"
+        src={image},
+        alt="img"
+        loading="lazy"
+      />
+    </figure><div class="p-6">
+      <h1 class="font-bold text-lg text-primary-700 dark:text-primary-400">
+       {title}
+      </h1><p class="mt-4 text-pretty text-dark-700 dark:text-dark-200">
+       {description}
+      </p>
+      <ul class="flex gap-1 flex-wrap text-sm mt-4">
+        {tags.map((tag) => (
+            <li class="rounded-full px-2 border-dark-200 dark:border-dark-800 bg-dark-300/60 dark:bg-primary-900/30 backdrop-blur-sm text-dark-700 dark:text-dark-200">
+              <span
+                class={`flex md:flex-nowrap gap-x-3 rounded-full text-xs ${tag.class} py-1 px-2 `}
+              >
+                <tag.icon class="size-5" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+          
+      </ul>
+    </div>
+    <span class="absolute top-4 left-4 backdrop-blur-md bg-dark-600/50 py-1 px-2 rounded-full z-10 text-sm font-semibold text-dark-100"
+      >{typeProject}
+      </span>
+      </div>
+      )
+    )
+  
+  }
+</div>

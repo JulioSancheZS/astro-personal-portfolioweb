@@ -9,6 +9,8 @@ import Experience from "../components/Experiencia.astro";
 import Projects from "../components/Proyectos.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Tecnologias from "../components/Tecnologias.astro";
+import JulioPic from '../assets/juliopic.jpeg';
+
 ---
 
 <Layout
@@ -126,7 +128,7 @@ import Tecnologias from "../components/Tecnologias.astro";
       </h2><div class="pt-12 md:pt-2">
         <div class="w-full">
           <img
-            src="/src/assets/julio-pic.jpeg"
+            src={JulioPic.src}
             alt="Programador mirando a la cámara con escritorio atrás"
             class="object-cover rounded-full size-72 shadow-lg shadow-dark-900/20 dark:shadow-dark-50/10 mx-auto"
             loading="lazy"

@@ -4,7 +4,7 @@
   class="backdrop-blur-md bg-dark-200/30 dark:bg-dark-900/30 fixed w-full z-20 top-0 left-0"
 >
   <nav
-    class="container px-2 lg:max-w-[800px] flex flex-wrap items-center justify-between mx-auto py-4"
+    class="container px-2 lg:max-w-[900px] flex flex-wrap items-center justify-between mx-auto py-4"
   >
     <a
       class="flex gap-2 items-center self-center text-3xl font-black whitespace-nowrap text-primary-600 dark:text-primary-400"
@@ -49,7 +49,7 @@
               ></path></svg
             ></a>
         </li><li>
-          <button
+          <!-- <button
              id="btnDarkMode"
             class="bg-dark-300 dark:bg-dark-700 p-1 rounded-md false"
             title="Theme switcher button"
@@ -65,11 +65,11 @@
               ><path
                 d="M277.3 32h-42.7v64h42.7V32zm129.1 43.7L368 114.1l29.9 29.9 38.4-38.4-29.9-29.9zm-300.8 0l-29.9 29.9 38.4 38.4 29.9-29.9-38.4-38.4zM256 128c-70.4 0-128 57.6-128 128s57.6 128 128 128 128-57.6 128-128-57.6-128-128-128zm224 106.7h-64v42.7h64v-42.7zm-384 0H32v42.7h64v-42.7zM397.9 368L368 397.9l38.4 38.4 29.9-29.9-38.4-38.4zm-283.8 0l-38.4 38.4 29.9 29.9 38.4-38.4-29.9-29.9zm163.2 48h-42.7v64h42.7v-64z"
               ></path></svg
-            ></button>
+            ></button> -->
         </li>
       </ul>
       <div class="flex items-center">
-        <button
+        <!-- <button
           id="btnDarkModeMD"
           class="bg-dark-300 dark:bg-dark-700 p-1 rounded-md md:hidden"
           title="Theme switcher button"
@@ -86,7 +86,7 @@
               d="M277.3 32h-42.7v64h42.7V32zm129.1 43.7L368 114.1l29.9 29.9 38.4-38.4-29.9-29.9zm-300.8 0l-29.9 29.9 38.4 38.4 29.9-29.9-38.4-38.4zM256 128c-70.4 0-128 57.6-128 128s57.6 128 128 128 128-57.6 128-128-57.6-128-128-128zm224 106.7h-64v42.7h64v-42.7zm-384 0H32v42.7h64v-42.7zM397.9 368L368 397.9l38.4 38.4 29.9-29.9-38.4-38.4zm-283.8 0l-38.4 38.4 29.9 29.9 38.4-38.4-29.9-29.9zm163.2 48h-42.7v64h42.7v-64z"
             ></path></svg
           ></button
-        >
+        > -->
         <button
          id="btnMenuBurger"
           class="p-2 text-sm text-dark-700 dark:text-dark-200 rounded-lg md:hidden"
@@ -128,14 +128,20 @@
             class="relative overflow-hidden z-10 p-2 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-primary-500 before:backdrop-blur-lg before:rounded-lg rounded-xl before:-z-10 before:transition-all before:duration-500 before:hover:w-full transition-all duration-300 text-dark-700 hover:text-dark-900 dark:text-dark-200 dark:hover:text-dark-50"
             href="#proyectos">Proyectos</a>
         </li>
-
+        
+        <li class="text-center">
+          <a
+            class="relative overflow-hidden z-10 p-2 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-primary-500 before:backdrop-blur-lg before:rounded-lg rounded-xl before:-z-10 before:transition-all before:duration-500 before:hover:w-full transition-all duration-300 text-dark-700 hover:text-dark-900 dark:text-dark-200 dark:hover:text-dark-50"
+            href="#sobre-mi">Sobre mi</a>
+        </li>
         <li class="text-center">
           <a
             class="relative overflow-hidden z-10 p-2 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-primary-500 before:backdrop-blur-lg before:rounded-lg rounded-xl before:-z-10 before:transition-all before:duration-500 before:hover:w-full transition-all duration-300 text-dark-700 hover:text-dark-900 dark:text-dark-200 dark:hover:text-dark-50"
             href="#tecnologias">Tecnologías</a>
         </li>
 
-      </ul><ul class="flex justify-center space-x-8 my-4 md:hidden">
+      </ul>
+      <ul class="flex justify-center space-x-8 my-4 md:hidden">
         <li>
           <a
             href="https://www.linkedin.com/in/juliosancheyi/"
@@ -180,15 +186,15 @@
 
 <script is:inline>
 
-document.getElementById('btnDarkMode').addEventListener('click', () => {
+// document.getElementById('btnDarkMode').addEventListener('click', () => {
     
-    document.documentElement.classList.toggle('dark');
-  })
+//     document.documentElement.classList.toggle('dark');
+//   })
 
-  document.getElementById('btnDarkModeMD').addEventListener('click', () => {
+//   document.getElementById('btnDarkModeMD').addEventListener('click', () => {
     
-    document.documentElement.classList.toggle('dark');
-  })
+//     document.documentElement.classList.toggle('dark');
+//   })
   
 
   document.getElementById('btnMenuBurger').addEventListener('click', () => {

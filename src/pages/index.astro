@@ -8,47 +8,60 @@ import Mail from "../components/icons/Mail.astro";
 import Experience from "../components/Experiencia.astro";
 import Projects from "../components/Proyectos.astro";
 import SectionContainer from "../components/SectionContainer.astro";
-import Tecnologias from "../components/Tecnologias.astro"
+import Tecnologias from "../components/Tecnologias.astro";
 ---
 
 <Layout
   title="Porfolio de Julio | Full Stack Developer"
-  description="Contrata a juliodev para crear tu aplicación web o móvil."
+  description="Contratame para crear tu aplicación web o móvil."
 >
   <main class="px-2">
     <SectionContainer class="py-24 pb-24">
-      <img
-        class="rounded-full size-24 mb-4"
-        src="https://avatars.githubusercontent.com/u/45950953?s=400&u=57da1b95e9f36f7813cc62d20e375a6f0dabfa9a&v=4"
-        alt="julio dev photo"
-      />
-      <h1
-        class="text-white text-3xl lg:text-5xl md:text-4xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-2"
-      >
-        Hola, <span class="text-cyan-600 dark:text-cyan-400">soy Julio</span>
+      <div class="flex gap-4 mb-4">
+        <img
+          class="rounded-full shadow-lg size-24"
+          src="https://media.licdn.com/dms/image/D4E03AQFMgLXuQRlknQ/profile-displayphoto-shrink_800_800/0/1713146155512?e=1718841600&v=beta&t=-yUIW9t4bXDIKPn5kkJ2ilrwhcyFeeplAX0jEQTRQdU"
+          alt="Julio sanchez"
+        />
         <a
-          href="https://www.linkedin.com/in/juliosancheyi/"
+          href="https://linkedin.com/in/juliosancheyi"
           target="_blank"
           rel="noopener"
-          class="flex justify-center items-center"
+          class="flex items-center transition md:justify-center md:hover:scale-105"
         >
-          <div class="flex justify-center items-center">
-            <Badge>Disponible para trabajar</Badge>
+          <div class="flex items-center">
+            <span
+              class="relative inline-flex overflow-hidden rounded-full p-[1px]"
+            >
+              <span
+                class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#51E4B8_0%,#21554E_50%,#51E4B8_100%)]"
+              ></span>
+              <div
+                class="inline-flex items-center justify-center w-full px-3 py-1 text-sm text-green-800 bg-green-100 rounded-full cursor-pointer dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap"
+              >
+                Disponible para trabajar
+              </div>
+            </span>
           </div>
         </a>
+      </div>
+
+      <h1
+        class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white mb-3"
+      >
+        Hey, soy Julio
       </h1>
 
       <span
-        class="animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent text-2xl font-black"
+        class="animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent text-xl font-black"
         >Desarrollador Fullstack
-        </span
-      >
+      </span>
       <h2 class="text-2xl text-wrap lg:text-2xl max-w-[700px] pt-10">
         +2 años de experiencia, <span class="text-yellow-200/90 opacity-80"
           >Ingeniero en Ciencias de la Computación y Desarrollador de Software.</span
         >
         Especializado en el diseño y desarrollo de soluciones tecnológicas creativas
-        e innovadoras
+        e innovadoras.
       </h2>
 
       <nav class="flex gap-4 mt-8 flex-wrap">
@@ -57,10 +70,13 @@ import Tecnologias from "../components/Tecnologias.astro"
           LinkedIn
         </SocialPill>
         <SocialPill href="https://github.com/JulioSancheZS">
-          <GitHub class="size-4 md:size-6" />
+          <GitHub class="size-5 md:size-6" />
           GitHub
         </SocialPill>
-      
+        <SocialPill href="mailto:julio239995@gmail.com">
+          <Mail class="size-6 md:size-6" />
+          Contactame
+        </SocialPill>
       </nav>
     </SectionContainer>
 
@@ -77,25 +93,111 @@ import Tecnologias from "../components/Tecnologias.astro"
       </h2>
       <Projects />
 
-      <div class="hidden md:flex bottom-4 w-full justify-center">
+      <div class="flex justify-center items-center md:flex bottom-4 w-full">
         <a
           href="https://github.com/JulioSancheZS"
-		  target="_blank"
-          class="md:flex gap-2 animate-bounce text-sky-400 dark:text-sky-400 font-bold"
+          target="_blank"
+          class="md:flex flex gap-2 animate-bounce text-sky-400 dark:text-sky-400 font-bold"
           >Mas Proyectos
-		  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
-			<path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
-			<path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
-		  </svg>   
-		</a>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-box-arrow-up-right"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"
+            ></path>
+            <path
+              fill-rule="evenodd"
+              d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"
+            ></path>
+          </svg>
+        </a>
       </div>
     </SectionContainer>
+
+    <SectionContainer class="pt-24 container mx-auto px-2 lg:w-[740px]" id="sobre-mi">
+      <h2 class="text-3xl font-bold text-dark-700 dark:text-primary-50">
+        Sobre mí
+      </h2><div class="pt-12 md:pt-2">
+        <div class="w-full">
+          <img
+            src="/src/assets/julio-pic.jpeg"
+            alt="Programador mirando a la cámara con escritorio atrás"
+            class="object-cover rounded-full size-72 shadow-lg shadow-dark-900/20 dark:shadow-dark-50/10 mx-auto"
+            loading="lazy"
+          />
+          <p
+            class="mt-8 text-dark-700 dark:text-dark-200 md:w-11/12 text-pretty text-base"
+          >
+            Hola 👋, soy Julio Sánchez, <span
+              class="font-bold text-primary-700 dark:text-primary-400"
+              >Ingeniero en Ciencias de la Computación</span
+            > y <span class="font-bold text-primary-700 dark:text-primary-400"
+              >Desarrollador FullStack.</span
+            > 
+            Con una sólida formación académica. Me especializo en el desarrollo de software,
+            tengo excelentes habilidades para resolver problemas, estoy comprometido a aprender
+            y mejorar continuamente. 
+          </p>
+
+          <p
+          class="mt-4 text-dark-700 dark:text-dark-200 md:w-11/12 text-pretty text-base">
+          Cuento con un conjunto diverso y prometedor de
+          habilidades, centrándome en escribir código de alta calidad. Siempre estoy abierto a nuevas 
+          oportunidades de aprendizaje y estoy emocionado por explorar y dominar nuevas tecnologías y 
+          entornos de desarrollo de software.
+        </p>
+
+          <p
+            class="mt-4 text-dark-700 dark:text-dark-200 md:w-11/12 text-pretty text-base">
+            En la actualidad, me sumerjo en el apasionante mundo del desarrollo web, explorando Angular de manera autodidacta y ampliando así mis habilidades hacia el desarrollo FullStack. Con un enfoque integral en el desarrollo, puedo abordar proyectos desde la creación de interfaces de usuario atractivas y amigables hasta la implementación de complejas lógicas de negocio en el backend.
+          </p>
+          <p
+            class="mt-4 text-dark-700 dark:text-dark-200 md:w-11/12 text-pretty text-base">
+            Por último, comparto mi hoja de vida actualizada, donde de manera más detallada específico mi experiencia laboral, logros y formación académica.
+          </p>
+
+        </div>
+      </div>
+      <div class="flex justify-center w-full mt-8">
+
+
+        <a 
+        href="https://docs.google.com/document/d/1_h__DmmMyKnLnBU0D8V-8gNtBNqruxGR93kJh1gv3Xo/edit?usp=sharing"
+        target="_blank"
+        class="flex items-center justify-around font-bold ext-red hover:before:bg-sky-500 relative h-[50px] w-40 overflow-hidden border border-sky-500 bg-gray-900 px-3 text-sky-500 shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-sky-500 before:transition-all before:duration-500 hover:text-white hover:shadow-sky-500 hover:before:left-0 hover:before:w-full">
+          
+          <span class="relative z-10">Curriculum</span>
+          <svg
+          class="relative z-10"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 1024 1024"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+            ><path
+              d="M644.7 669.2a7.92 7.92 0 0 0-6.5-3.3H594c-6.5 0-10.3 7.4-6.5 12.7l73.8 102.1c3.2 4.4 9.7 4.4 12.9 0l114.2-158c3.8-5.3 0-12.7-6.5-12.7h-44.3c-2.6 0-5 1.2-6.5 3.3l-63.5 87.8-22.9-31.9zM688 306v-48c0-4.4-3.6-8-8-8H296c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h384c4.4 0 8-3.6 8-8zm-392 88c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H296zm184 458H208V148h560v296c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V108c0-17.7-14.3-32-32-32H168c-17.7 0-32 14.3-32 32v784c0 17.7 14.3 32 32 32h312c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm402.6-320.8l-192-66.7c-.9-.3-1.7-.4-2.6-.4s-1.8.1-2.6.4l-192 66.7a7.96 7.96 0 0 0-5.4 7.5v251.1c0 2.5 1.1 4.8 3.1 6.3l192 150.2c1.4 1.1 3.2 1.7 4.9 1.7s3.5-.6 4.9-1.7l192-150.2c1.9-1.5 3.1-3.8 3.1-6.3V538.7c0-3.4-2.2-6.4-5.4-7.5zM826 763.7L688 871.6 550 763.7V577l138-48 138 48v186.7z"
+            ></path></svg
+          >
+        </a>
+      </div>
+    </SectionContainer>
+
     <SectionContainer id="tecnologias" class="py-16 pb-10">
       <h2 class="text-4xl font-semibold mb-4 flex gap-x-2 items-center">
         Tecnologías
       </h2>
-      <div class="grid lg:grid-cols-2 lg:grid-rows-2 gap-6 lg:place-content-center">
-        <Tecnologias></Tecnologias>
+      <div
+        class="grid lg:grid-cols-2 lg:grid-rows-2 gap-6 lg:place-content-center"
+      >
+        <Tecnologias />
       </div>
     </SectionContainer>
   </main>

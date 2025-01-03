@@ -10,6 +10,8 @@ import Projects from "../components/Proyectos.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Tecnologias from "../components/Tecnologias.astro";
 import JulioPic from '../assets/juliopic.jpeg';
+import JulioFoto from '../assets/profile-pic.png';
+import Whatsapp from "../components/icons/Whatsapp.astro";
 
 ---
 
@@ -22,7 +24,7 @@ import JulioPic from '../assets/juliopic.jpeg';
       <div class="flex gap-4 mb-4">
         <img
           class="rounded-full shadow-lg size-24"
-          src="https://media.licdn.com/dms/image/D4E03AQFMgLXuQRlknQ/profile-displayphoto-shrink_800_800/0/1713146155512?e=1718841600&v=beta&t=-yUIW9t4bXDIKPn5kkJ2ilrwhcyFeeplAX0jEQTRQdU"
+          src={JulioFoto.src}
           alt="Julio sanchez"
         />
         <a
@@ -56,10 +58,10 @@ import JulioPic from '../assets/juliopic.jpeg';
 
       <span
         class="animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent text-xl font-black"
-        >Desarrollador Fullstack
+        >Software Developer
       </span>
       <h2 class="text-2xl text-wrap lg:text-2xl max-w-[700px] pt-10">
-        +2 años de experiencia, <span class="text-yellow-200/90 opacity-80"
+        +3 años de experiencia, <span class="text-yellow-200/90 opacity-80"
           >Ingeniero en Ciencias de la Computación y Desarrollador de Software.</span
         >
         Especializado en el diseño y desarrollo de soluciones tecnológicas creativas
@@ -75,8 +77,8 @@ import JulioPic from '../assets/juliopic.jpeg';
           <GitHub class="size-5 md:size-6" />
           GitHub
         </SocialPill>
-        <SocialPill href="mailto:julio239995@gmail.com">
-          <Mail class="size-6 md:size-6" />
+        <SocialPill href="https://api.whatsapp.com/send?phone=86616696">
+          <Whatsapp class="size-6 md:size-6" />
           Contactame
         </SocialPill>
       </nav>
@@ -140,7 +142,7 @@ import JulioPic from '../assets/juliopic.jpeg';
               class="font-bold text-primary-700 dark:text-primary-400"
               >Ingeniero en Ciencias de la Computación</span
             > y <span class="font-bold text-primary-700 dark:text-primary-400"
-              >Desarrollador FullStack.</span
+              >Software Developer.</span
             > 
             Con una sólida formación académica. Me especializo en el desarrollo de software,
             tengo excelentes habilidades para resolver problemas, estoy comprometido a aprender
@@ -157,7 +159,7 @@ import JulioPic from '../assets/juliopic.jpeg';
 
           <p
             class="mt-4 text-dark-700 dark:text-dark-200 md:w-11/12 text-pretty text-base">
-            En la actualidad, me sumerjo en el apasionante mundo del desarrollo web, explorando Angular de manera autodidacta y ampliando así mis habilidades hacia el desarrollo FullStack. Con un enfoque integral en el desarrollo, puedo abordar proyectos desde la creación de interfaces de usuario atractivas y amigables hasta la implementación de complejas lógicas de negocio en el backend.
+            En la actualidad, me sumerjo en el apasionante mundo del desarrollo web, explorando Blazor de manera autodidacta y ampliando así mis habilidades hacia el desarrollo FullStack. Con un enfoque integral en el desarrollo, puedo abordar proyectos desde la creación de interfaces de usuario atractivas y amigables hasta la implementación de complejas lógicas de negocio en el backend.
           </p>
           <p
             class="mt-4 text-dark-700 dark:text-dark-200 md:w-11/12 text-pretty text-base">

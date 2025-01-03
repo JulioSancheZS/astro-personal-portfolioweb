@@ -1,0 +1,363 @@
+---
+import { Image } from 'astro:assets';
+import JulioFoto from "../assets/profile-pic.png";
+import SectionContainer from "../components/SectionContainer.astro";
+import Layout from "../layouts/Layout.astro";
+import ProgramingPNG from "../assets/programming.png"
+import WebsitePNG from "../assets/website.png"
+import MymImage from "../assets/mymweb.png"
+import AppGastosImage from "../assets/appgastos.png"
+import PortafolioImage from "../assets/portafolioProyecto.png"
+
+---
+
+<Layout
+  title="Porfolio de Julio | Full Stack Developer"
+  description="Contratame para crear tu aplicación web o móvil."
+>
+  <main class="px-2">
+    <SectionContainer class="py-18 pb-18">
+      <header
+        class="mt-16 container mx-auto px-2 lg:w-[1114px] lg:px-0 lg:grid lg:grid-cols-2 gap-4 place-items-center lg:h-[640px] z-20"
+      >
+        <section class="pt-16 lg:pt-0">
+          <h1
+            class="__className_a238f4 text-3xl uppercase font-bold lg:text-5xl text-dark-700 dark:text-dark-200"
+          >
+            <span class="text-sm lg:text-2xl block"
+              >Impulsa tu <span
+                class="bg-gradient-to-t from-[#ffb272] to-[#ee4a08] dark:from-[#ffebd4] dark:to-[#fd6412] bg-clip-text text-transparent"
+              >
+              Negocio</span
+              >
+            </span>con un <span
+              class="bg-gradient-to-t from-[#75dbff] to-[#0072ab] dark:from-[#def3ff] dark:to-[#00a8e8] bg-clip-text text-transparent font-extrabold"
+              >sitio web profesional</span
+            >
+          </h1><p
+            class="text-dark-700 dark:text-dark-200 text-balance text-base my-6 mb-12"
+          >
+          Impulsa tu presencia en línea con soluciones web a medida. Desde sitios personales 
+          hasta tiendas en línea y proyectos corporativos, 
+          ¡transformamos tu visión digital en realidad!"
+          </p><a
+            href="https://api.whatsapp.com/send?phone=++50586616696&text=Hola+%F0%9F%AB%A1%2C+estoy+interesado+en+el+desarrollo+de+un+sitio+web+%F0%9F%8C%90+y+me+gustar%C3%ADa+ampliar+la+informaci%C3%B3n+sobre+tus+servicios."
+            target="_blank"
+            class="flex justify-center items-center gap-2 rounded-full bg-green-700 px-6 py-3 text-lg font-bold text-dark-100 transition-colors md:max-w-fit"
+            >Ponerme en contacto <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="size-6"
+              ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"></path><path
+                d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"
+              ></path></svg
+            ></a
+          >
+        </section><section class="flex mt-14 justify-center">
+          <div
+            class="bg-sky-700 rounded-xl shadow-lg px-1 md:px-4 py-3 md:py-6 -rotate-12 hover:scale-125 hover:z-10 transition-transform w-28 md:w-48 relative left-3"
+          >
+            <a href="#web-corporativa"
+              ><img
+                src={WebsitePNG.src}
+                alt="Ilustración desarrollo web"
+              /><h2
+                class="font-bold text-dark-50 my-2 text-center md:text-left"
+              >
+                Corporativa
+              </h2><p class="hidden md:block text-xs text-dark-50">
+                Ideal para emprendedores, pequeñas empresas e instituciones.
+              </p></a
+            >
+          </div>
+          <div
+            class="bg-blue-600 rounded-xl shadow-lg px-1 md:px-4 py-3 md:py-6 rotate-12 hover:scale-125 hover:z-10 transition-transform w-28 md:w-48 relative right-3"
+          >
+            <a href="#software-a-la-medida"
+              ><img
+                src={ProgramingPNG.src}
+                alt="Ilustración programador"
+              /><h2
+                class="font-bold text-dark-50 my-2 text-center md:text-left"
+              >
+                A la medida
+              </h2><p class="hidden md:block text-xs text-dark-50">
+                Lleva tus procesos al siguiente nivel con soluciones de
+                automatización en la web.
+              </p></a
+            >
+          </div>
+        </section>
+      </header>
+    </SectionContainer>
+  </main>
+
+  <SectionContainer class="py-24 pb-24">
+    <article
+      id="web-corporativa"
+      class="container py-24 mx-auto px-2 lg:w-[1114px] lg:px-0 md:flex md:gap-8 md:items-center false"
+    >
+      <section>
+        <h2 class="uppercase text-sm text-sky-700 dark:text-sky-400">
+          Web corporativa
+        </h2><h1 class="capitalize text-xl md:text-4xl font-bold">
+          Destaca con una web corporativa de <span
+            class="text-sky-700 dark:text-sky-400">impacto</span
+          >
+        </h1><p
+          class="text-slate-700 dark:text-slate-200 text-balance text-pretty my-8"
+        >
+          Aprovecha al máximo tu presencia en línea con una web corporativa.
+          Diseñada para destacar, esta solucion te ofrece un sitio en internet
+          sólido para tu empresa o emprendimiento, con una serie de beneficios
+          clave
+        </p><ul class="service-list">
+          <li>
+            <p
+              class="text-slate-700 dark:text-slate-200 text-balance text-pretty"
+            >
+              Proyección Profesional: Transmita confianza y credibilidad a sus
+              clientes con un diseño corporativo impecable.
+            </p>
+          </li><li>
+            <p
+              class="text-slate-700 dark:text-slate-200 text-balance text-pretty"
+            >
+              Experiencia de Usuario Optimizada: Navegación intuitiva y
+              estructura clara para una experiencia de usuario excepcional.
+            </p>
+          </li><li>
+            <p
+              class="text-slate-700 dark:text-slate-200 text-balance text-pretty"
+            >
+              Personalización Total: Desde la paleta de colores hasta la
+              disposición de contenido, cada detalle se adapta a sus
+              necesidades.
+            </p>
+          </li><li>
+            <p
+              class="text-slate-700 dark:text-slate-200 text-balance text-pretty"
+            >
+              SEO Integrado: Posicione su empresa en los motores de búsqueda y
+              aumente su visibilidad en línea.
+            </p>
+          </li><li>
+            <p
+              class="text-slate-700 dark:text-slate-200 text-balance text-pretty"
+            >
+              Escalabilidad: Preparada para crecer con su empresa, nuestra web
+              corporativa se adapta a sus necesidades en constante evolución.
+            </p>
+          </li>
+        </ul>
+      </section>
+      <aside class="min-w-fit mt-8 md:mt-0">
+        <h4
+          class="mb-4 font-bold text-lg md:text-2xl text-sky-700 dark:text-sky-400"
+        >
+          Proyectos
+        </h4><div class="grid grid-cols-2 gap-4 place-content-center mb-8">
+          <a
+            href="https://mym-agencia-pages.netlify.app/"
+            class="relative group hover:bg-slate-950 rounded-lg shadow-lg hover:shadow-2xl transition-shadow"
+            target="_blank"
+            ><img
+              src={MymImage.src}
+              alt="Colraices"
+              width="240"
+              height="210"
+              loading="lazy"
+              class="rounded-lg object-cover group-hover:opacity-50 transition-all"
+            /><span
+              class="absolute m-auto top-4 right-4 text-sm font-bold hidden group-hover:flex transition-all items-center gap-2 text-white"
+              >MyM Agencia de envíos y compras en línea<svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="size-4"
+                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                  d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"
+                ></path><path d="M11 13l9 -9"></path><path d="M15 4h5v5"
+                ></path></svg
+              ></span
+            ></a
+          >
+          <a
+            href="https://portfolio-dev-julio.netlify.app/"
+            class="relative group hover:bg-dark-950 rounded-lg shadow-lg hover:shadow-2xl transition-shadow"
+            target="_blank"
+            ><img
+              src={PortafolioImage.src}
+              alt="Momentum"
+              width="240"
+              height="210"
+              loading="lazy"
+              class="rounded-lg object-cover group-hover:opacity-50 transition-all"
+            /><span
+              class="absolute m-auto top-4 right-4 text-sm font-bold hidden group-hover:flex transition-all items-center gap-2 text-white"
+              >Mi Porfolio Web Personal <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="size-4"
+                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                  d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"
+                ></path><path d="M11 13l9 -9"></path><path d="M15 4h5v5"
+                ></path></svg
+              ></span
+            ></a
+          >
+        
+        </div>
+        <a
+          href="https://api.whatsapp.com/send?phone=+50586616696&text=Hola+%F0%9F%AB%A1%2C+estoy+interesado+en+el+desarrollo+de+una+web+corporativa+%F0%9F%8C%90+y+me+gustar%C3%ADa+ampliar+la+informaci%C3%B3n+sobre+este+servicio."
+          class="flex justify-center items-center gap-2 px-6 py-2 font-bold relative z-10 overflow-hidden before:content-[''] before:absolute before:top-0 before:left-0 before:h-full before:w-0 before:rounded-full before:bg-blue-800 before:-z-10 before:transition-all before:duration-300 before:hover:w-full text-dark-100 bg-sky-600 rounded-full hover:bg-dark-600 hover:shadow-md hover:shadow-primary-500/50 ease duration-500 max-w-56 mx-auto"
+          >Quiero mi web</a
+        >
+      </aside>
+    </article>
+  </SectionContainer>
+
+  <SectionContainer class="py-24 pb-24">
+    <article
+      id="tienda-en-linea"
+      class="container py-24 mx-auto px-2 lg:w-[1114px] lg:px-0 md:flex md:gap-8 md:items-center md:flex-row-reverse"
+    >
+      <section>
+        <h2 class="uppercase text-sm text-blue-600 dark:text-blue-400">
+          A la medida
+        </h2><h1 class="capitalize text-xl md:text-4xl font-bold">
+          Aumenta La Productividad<span
+            class="text-blue-600 dark:text-blue-400"
+            > Con Software Personalizado</span
+          >
+        </h1><p
+          class="text-slate-700 dark:text-slate-200 my-8"
+        >
+        Optimice sus ventas y controle su negocio con un sistema de facturación eficiente y confiable.
+        </p><ul class="service-list">
+          <li>
+            <p
+              class="text-dark-700 dark:text-dark-200"
+            >
+              Personalización Avanzada: Desde la apariencia visual hasta las
+              funcionalidades específicas, cada aspecto se adapta a las
+              necesidades de su negocio.
+            </p>
+          </li>
+
+          <li>
+            <p
+              class="text-dark-700 dark:text-dark-200"
+            >
+            Gestión de Productos: Administre sus productos de manera eficiente con un control detallado y simplificado, 
+            optimizando su inventario y facilitando la organización.
+            </p>
+          </li><li>
+            <p
+              class="text-dark-700 dark:text-dark-200"
+            >
+              Escalabilidad: Prepárese para el crecimiento con una plataforma
+              flexible que se adapta a las necesidades cambiantes de su negocio.
+            </p>
+          </li>
+        </ul>
+      </section><aside class="min-w-fit mt-8 md:mt-0">
+        <h4
+          class="mb-4 font-bold text-lg md:text-2xl text-primary-600 dark:text-primary-400"
+        >
+          Proyectos
+        </h4><div class="grid grid-cols-2 gap-4 place-content-center mb-8">
+          <a
+            href="#"
+            class="relative group hover:bg-dark-950 rounded-lg shadow-lg hover:shadow-2xl transition-shadow"
+            target="_blank"
+            ><img
+            src={PortafolioImage.src}
+              alt="Dotase"
+              width="240"
+              height="210"
+              loading="lazy"
+              class="rounded-lg object-cover group-hover:opacity-50 transition-all"
+            /><span
+              class="absolute m-auto top-4 right-4 text-sm font-bold hidden group-hover:flex transition-all items-center gap-2 text-white"
+              >Sistema de ventas <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="size-4"
+                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                  d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"
+                ></path><path d="M11 13l9 -9"></path><path d="M15 4h5v5"
+                ></path></svg
+              ></span
+            ></a
+          ><a
+            href="#"
+            class="relative group hover:bg-dark-950 rounded-lg shadow-lg hover:shadow-2xl transition-shadow"
+            target="_blank"
+            ><img
+            src={AppGastosImage.src}
+              alt="Valentia Energía"
+              width="240"
+              height="210"
+              loading="lazy"
+              class="rounded-lg object-cover group-hover:opacity-50 transition-all"
+            /><span
+              class="absolute m-auto top-4 right-4 text-sm font-bold hidden group-hover:flex transition-all items-center gap-2 text-white"
+              >App Gastos<svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="size-4"
+                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                  d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"
+                ></path><path d="M11 13l9 -9"></path><path d="M15 4h5v5"
+                ></path></svg
+              ></span
+            ></a
+          >
+        
+        </div><a
+          href="https://api.whatsapp.com/send?phone=+86616696&text=Hola+%F0%9F%AB%A1%2C+estoy+interesado+en+el+desarrollo+de+un+sistema+para+mi+negocio+%F0%9F%8C%90+y+me+gustar%C3%ADa+ampliar+la+informaci%C3%B3n+sobre+este+servicio."
+          class="flex justify-center items-center gap-2 px-6 py-2 font-bold relative z-10 overflow-hidden before:content-[''] before:absolute before:top-0 before:left-0 before:h-full before:w-0 before:rounded-full before:bg-sky-600 before:-z-10 before:transition-all before:duration-300 before:hover:w-full text-slate-100 bg-blue-600 rounded-full hover:bg-slate-600 hover:shadow-md hover:shadow-blue-500/50 ease duration-500 max-w-56 mx-auto"
+          >Quiero mi E-commerce</a
+        >
+      </aside>
+    </article>
+  </SectionContainer>
+
+
+</Layout>

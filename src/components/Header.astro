@@ -1,15 +1,20 @@
-
-
+---
+import LogoJulio from '../assets/logopersonal.png';
+---
 <header
   class="backdrop-blur-md bg-dark-200/30 dark:bg-dark-900/30 fixed w-full z-20 top-0 left-0"
 >
   <nav
     class="container px-2 lg:max-w-[900px] flex flex-wrap items-center justify-between mx-auto py-4"
   >
-    <a
-      class="flex gap-2 items-center self-center text-3xl font-black whitespace-nowrap text-primary-600 dark:text-primary-400"
-      href="/#top">juliodevcode</a
-    >
+<a href="/#top" class="flex items-center gap-3">
+  <img
+    src={LogoJulio.src}
+    alt="Logo JulioDevCode"
+    class="h-12 md:h-16 w-auto transition-all duration-300" />
+</a>
+
+
     <div class="md:order-2">
       <ul class="hidden md:flex md:space-x-8 items-center">
         <li>
@@ -81,6 +86,13 @@
           class="relative overflow-hidden z-10 p-2 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-primary-500 before:backdrop-blur-lg before:rounded-lg rounded-xl before:-z-10 before:transition-all before:duration-500 before:hover:w-full transition-all duration-300 text-dark-700 hover:text-dark-900 dark:text-dark-200 dark:hover:text-dark-50"
           href="#top">Inicio</a>
       </li> -->
+
+        <li class="text-center">
+          <a
+            class="relative overflow-hidden z-10 p-2 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-primary-500 before:backdrop-blur-lg before:rounded-lg rounded-xl before:-z-10 before:transition-all before:duration-500 before:hover:w-full transition-all duration-300 text-dark-700 hover:text-dark-900 dark:text-dark-200 dark:hover:text-dark-50"
+            href="/#proyectos">Proyectos</a>
+        </li>
+
       <li class="text-center">
         <a
           href="/#experiencia"
@@ -88,11 +100,8 @@
           >Experiencia</a>
       </li>
 
-        <li class="text-center">
-          <a
-            class="relative overflow-hidden z-10 p-2 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-primary-500 before:backdrop-blur-lg before:rounded-lg rounded-xl before:-z-10 before:transition-all before:duration-500 before:hover:w-full transition-all duration-300 text-dark-700 hover:text-dark-900 dark:text-dark-200 dark:hover:text-dark-50"
-            href="/#proyectos">Proyectos</a>
-        </li>
+      
+
         <li class="text-center">
           <a
             class="relative overflow-hidden z-10

@@ -1,14 +1,18 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 import JulioFoto from "../assets/profile-pic.png";
 import SectionContainer from "../components/SectionContainer.astro";
 import Layout from "../layouts/Layout.astro";
-import ProgramingPNG from "../assets/programming.png"
-import WebsitePNG from "../assets/website.png"
-import MymImage from "../assets/mymweb.png"
-import AppGastosImage from "../assets/appgastos.png"
-import PortafolioImage from "../assets/portafolioProyecto.png"
-import DrSilviaProject from "../assets/drsilviaproject.png"
+import ProgramingPNG from "../assets/programming.png";
+import WebsitePNG from "../assets/website.png";
+import MymImage from "../assets/mymweb.png";
+import AppGastosImage from "../assets/appgastos.png";
+import PortafolioImage from "../assets/portafolioProyecto.png";
+import DrSilviaProject from "../assets/drsilviaproject.png";
+import LogoJulio from "../assets/logopersonal.png";
+import BlazorAppGastos  from '../assets/blazorApp.png'
+import AppPedidosAndroid  from '../assets/appPedidosAndroid.png'
+
 ---
 
 <Layout
@@ -28,18 +32,18 @@ import DrSilviaProject from "../assets/drsilviaproject.png"
               >Impulsa tu <span
                 class="bg-gradient-to-t from-[#ffb272] to-[#ee4a08] dark:from-[#ffebd4] dark:to-[#fd6412] bg-clip-text text-transparent"
               >
-              Negocio</span
+                Negocio</span
               >
-            </span>con un <span
+            </span>con <span
               class="bg-gradient-to-t from-[#75dbff] to-[#0072ab] dark:from-[#def3ff] dark:to-[#00a8e8] bg-clip-text text-transparent font-extrabold"
-              >sitio web profesional</span
+              >soluciones digitales a medida</span
             >
           </h1><p
             class="text-dark-700 dark:text-dark-200 text-balance text-base my-6 mb-12"
           >
-          Impulsa tu presencia en línea con soluciones web a medida. Desde sitios personales 
-          hasta tiendas en línea y proyectos corporativos, 
-          ¡transformamos tu visión digital en realidad!"
+            Transforma tus ideas en proyectos digitales sólidos: sitios web,
+            sistemas en línea y aplicaciones móviles diseñadas para hacer crecer
+            tu negocio.
           </p><a
             href="https://api.whatsapp.com/send?phone=++50586616696&text=Hola+%F0%9F%AB%A1%2C+estoy+interesado+en+el+desarrollo+de+un+sitio+web+%F0%9F%8C%90+y+me+gustar%C3%ADa+ampliar+la+informaci%C3%B3n+sobre+tus+servicios."
             target="_blank"
@@ -66,10 +70,7 @@ import DrSilviaProject from "../assets/drsilviaproject.png"
             class="bg-sky-700 rounded-xl shadow-lg px-1 md:px-4 py-3 md:py-6 -rotate-12 hover:scale-125 hover:z-10 transition-transform w-28 md:w-48 relative left-3"
           >
             <a href="#web-corporativa"
-              ><img
-                src={WebsitePNG.src}
-                alt="Ilustración desarrollo web"
-              /><h2
+              ><img src={WebsitePNG.src} alt="Ilustración desarrollo web" /><h2
                 class="font-bold text-dark-50 my-2 text-center md:text-left"
               >
                 Corporativa
@@ -82,10 +83,7 @@ import DrSilviaProject from "../assets/drsilviaproject.png"
             class="bg-blue-600 rounded-xl shadow-lg px-1 md:px-4 py-3 md:py-6 rotate-12 hover:scale-125 hover:z-10 transition-transform w-28 md:w-48 relative right-3"
           >
             <a href="#software-a-la-medida"
-              ><img
-                src={ProgramingPNG.src}
-                alt="Ilustración programador"
-              /><h2
+              ><img src={ProgramingPNG.src} alt="Ilustración programador" /><h2
                 class="font-bold text-dark-50 my-2 text-center md:text-left"
               >
                 A la medida
@@ -100,264 +98,513 @@ import DrSilviaProject from "../assets/drsilviaproject.png"
     </SectionContainer>
   </main>
 
+  <!-- Web corporativa -->
   <SectionContainer class="py-24 pb-24">
     <article
       id="web-corporativa"
-      class="container py-24 mx-auto px-2 lg:w-[1114px] lg:px-0 md:flex md:gap-8 md:items-center false"
+      class="container py-24 mx-auto px-4 lg:w-[1114px] md:flex md:gap-8 md:items-start"
     >
-      <section>
-        <h2 class="uppercase text-sm text-sky-700 dark:text-sky-400">
-          Web corporativa
-        </h2><h1 class="capitalize text-xl md:text-4xl font-bold">
-          Destaca con una web corporativa de <span
-            class="text-sky-700 dark:text-sky-400">impacto</span
-          >
-        </h1><p
-          class="text-slate-700 dark:text-slate-200 text-balance text-pretty my-8"
+      <!-- SECCIÓN PRINCIPAL -->
+      <section class="flex-1">
+        <h2
+          class="uppercase text-sm text-sky-700 dark:text-sky-400 tracking-wide"
         >
-          Aprovecha al máximo tu presencia en línea con una web corporativa.
-          Diseñada para destacar, esta solucion te ofrece un sitio en internet
-          sólido para tu empresa o emprendimiento, con una serie de beneficios
-          clave
-        </p><ul class="service-list">
+          Web corporativa
+        </h2>
+
+        <h1 class="capitalize text-3xl md:text-4xl font-bold mt-2">
+          🧱 Destaca con una web corporativa de
+          <span class="text-sky-700 dark:text-sky-400">impacto</span>
+        </h1>
+
+        <p class="text-slate-700 dark:text-slate-200 my-6 leading-relaxed">
+          Ideal para emprendedores, negocios e instituciones que desean destacar
+          en línea. Diseños modernos, optimizados y profesionales que proyectan
+          confianza y credibilidad. Convierte tu sitio en una herramienta de
+          marketing y crecimiento real para tu marca.
+        </p>
+
+        <!-- LISTA DE BENEFICIOS -->
+        <ul class="list-disc pl-5 space-y-3 text-slate-700 dark:text-slate-200">
           <li>
-            <p
-              class="text-slate-700 dark:text-slate-200 text-balance text-pretty"
-            >
-              Proyección Profesional: Transmita confianza y credibilidad a sus
-              clientes con un diseño corporativo impecable.
-            </p>
-          </li><li>
-            <p
-              class="text-slate-700 dark:text-slate-200 text-balance text-pretty"
-            >
-              Experiencia de Usuario Optimizada: Navegación intuitiva y
-              estructura clara para una experiencia de usuario excepcional.
-            </p>
-          </li><li>
-            <p
-              class="text-slate-700 dark:text-slate-200 text-balance text-pretty"
-            >
-              Personalización Total: Desde la paleta de colores hasta la
-              disposición de contenido, cada detalle se adapta a sus
-              necesidades.
-            </p>
-          </li><li>
-            <p
-              class="text-slate-700 dark:text-slate-200 text-balance text-pretty"
-            >
-              SEO Integrado: Posicione su empresa en los motores de búsqueda y
-              aumente su visibilidad en línea.
-            </p>
-          </li><li>
-            <p
-              class="text-slate-700 dark:text-slate-200 text-balance text-pretty"
-            >
-              Escalabilidad: Preparada para crecer con su empresa, nuestra web
-              corporativa se adapta a sus necesidades en constante evolución.
-            </p>
+            🌐 <strong>Diseño adaptable:</strong> visualmente optimizado para dispositivos
+            móviles y escritorio.
+          </li>
+          <li>
+            🧭 <strong>Experiencia de usuario optimizada:</strong> navegación fluida
+            y estructura clara que mejora la interacción.
+          </li>
+          <li>
+            🔍 <strong>SEO básico integrado:</strong> mejora tu visibilidad y posicionamiento
+            en buscadores.
+          </li>
+          <li>
+            ⚙️ <strong>Escalabilidad:</strong> lista para crecer junto a tu negocio
+            sin complicaciones.
+          </li>
+          <li>
+            💼 <strong>Imagen corporativa consistente:</strong> refuerza la identidad
+            visual y profesional de tu empresa.
           </li>
         </ul>
       </section>
-      <aside class="min-w-fit mt-8 md:mt-0">
+
+      <!-- LATERAL DE PROYECTOS -->
+      <aside class="min-w-fit mt-12 md:mt-0 md:w-[360px]">
         <h4
           class="mb-4 font-bold text-lg md:text-2xl text-sky-700 dark:text-sky-400"
         >
           Proyectos Web
-        </h4><div class="grid grid-cols-2 gap-4 place-content-center mb-8">
+        </h4>
+
+        <div class="grid grid-cols-2 gap-4 mb-8">
+          <!-- Proyecto 1 -->
           <a
             href="https://mym-agencia-pages.netlify.app/"
-            class="relative group hover:bg-slate-950 rounded-lg shadow-lg hover:shadow-2xl transition-shadow"
             target="_blank"
-            ><img
+            class="relative group rounded-lg shadow-lg hover:shadow-2xl transition-all"
+          >
+            <img
               src={MymImage.src}
-              alt="Colraices"
-              width="240"
-              height="210"
+              alt="MyM Agencia de envíos y compras en línea"
+              class="rounded-lg object-cover w-full h-[210px] group-hover:opacity-50 transition-all"
               loading="lazy"
-              class="rounded-lg object-cover group-hover:opacity-50 transition-all"
-            /><span
-              class="absolute m-auto top-4 right-4 text-sm font-bold hidden group-hover:flex transition-all items-center gap-2 text-white"
-              >MyM Agencia de envíos y compras en línea<svg
+            />
+            <span
+              class="absolute top-4 right-4 text-sm font-bold hidden group-hover:flex items-center gap-2 text-white"
+            >
+              MyM Agencia de envíos y compras en línea
+              <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
+                width="20"
+                height="20"
                 fill="none"
                 stroke="currentColor"
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="size-4"
-                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+              >
+                <path
                   d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"
-                ></path><path d="M11 13l9 -9"></path><path d="M15 4h5v5"
-                ></path></svg
-              ></span
-            ></a
-          >
+                ></path>
+                <path d="M11 13l9 -9"></path>
+                <path d="M15 4h5v5"></path>
+              </svg>
+            </span>
+          </a>
+
+          <!-- Proyecto 2 -->
           <a
             href="https://psicoaccioncr.com/"
-            class="relative group hover:bg-dark-950 rounded-lg shadow-lg hover:shadow-2xl transition-shadow"
             target="_blank"
-            ><img
+            class="relative group rounded-lg shadow-lg hover:shadow-2xl transition-all"
+          >
+            <img
               src={DrSilviaProject.src}
-              alt="Momentum"
-              width="240"
-              height="210"
+              alt="Dra. Silvia Cambronero Moraga"
+              class="rounded-lg object-cover w-full h-[210px] group-hover:opacity-50 transition-all"
               loading="lazy"
-              class="rounded-lg object-cover group-hover:opacity-50 transition-all"
-            /><span
-              class="absolute m-auto top-4 right-4 text-sm font-bold hidden group-hover:flex transition-all items-center gap-2 text-white"
-              >Dra. Silvia Cambronero Moraga<svg
+            />
+            <span
+              class="absolute top-4 right-4 text-sm font-bold hidden group-hover:flex items-center gap-2 text-white"
+            >
+              Dra. Silvia Cambronero Moraga
+              <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
+                width="20"
+                height="20"
                 fill="none"
                 stroke="currentColor"
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="size-4"
-                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+              >
+                <path
                   d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"
-                ></path><path d="M11 13l9 -9"></path><path d="M15 4h5v5"
-                ></path></svg
-              ></span
-            ></a
-          >
-        
+                ></path>
+                <path d="M11 13l9 -9"></path>
+                <path d="M15 4h5v5"></path>
+              </svg>
+            </span>
+          </a>
         </div>
+
+        <!-- Botón de acción -->
         <a
-          href="https://api.whatsapp.com/send?phone=+50586616696&text=Hola+%F0%9F%AB%A1%2C+estoy+interesado+en+el+desarrollo+de+una+web+corporativa+%F0%9F%8C%90+y+me+gustar%C3%ADa+ampliar+la+informaci%C3%B3n+sobre+este+servicio."
-          class="flex justify-center items-center gap-2 px-6 py-2 font-bold relative z-10 overflow-hidden before:content-[''] before:absolute before:top-0 before:left-0 before:h-full before:w-0 before:rounded-full before:bg-blue-800 before:-z-10 before:transition-all before:duration-300 before:hover:w-full text-dark-100 bg-sky-600 rounded-full hover:bg-dark-600 hover:shadow-md hover:shadow-primary-500/50 ease duration-500 max-w-56 mx-auto"
-          >Quiero mi web</a
+          href="https://api.whatsapp.com/send?phone=+50586616696&text=Hola+%F0%9F%AB%A1%2C+estoy+interesado+en+el+servicio+de+Web+Corporativa+%F0%9F%8C%90+y+me+gustar%C3%ADa+ampliar+la+informaci%C3%B3n."
+          class="flex justify-center items-center gap-2 px-6 py-3 font-bold relative z-10 overflow-hidden before:content-[''] before:absolute before:top-0 before:left-0 before:h-full before:w-0 before:rounded-full before:bg-blue-800 before:-z-10 before:transition-all before:duration-300 hover:before:w-full text-white bg-sky-600 rounded-full hover:bg-sky-700 hover:shadow-lg ease duration-500 max-w-56 mx-auto"
         >
+          🚀 Quiero mi sitio web
+        </a>
       </aside>
     </article>
   </SectionContainer>
 
+  <!-- A la medida -->
   <SectionContainer class="py-24 pb-24">
     <article
-      id="tienda-en-linea"
-      class="container py-24 mx-auto px-2 lg:w-[1114px] lg:px-0 md:flex md:gap-8 md:items-center md:flex-row-reverse"
+      id="desarrollo-a-medida"
+      class="container py-24 mx-auto px-4 lg:w-[1114px] md:flex md:gap-8 md:items-start md:flex-row-reverse"
     >
-      <section>
-        <h2 class="uppercase text-sm text-blue-600 dark:text-blue-400">
-          A la medida
-        </h2><h1 class="capitalize text-xl md:text-4xl font-bold">
-          Aumenta La Productividad<span
-            class="text-blue-600 dark:text-blue-400"
-            > Con Software Personalizado</span
-          >
-        </h1><p
-          class="text-slate-700 dark:text-slate-200 my-8"
+      <!-- SECCIÓN PRINCIPAL -->
+      <section class="flex-1">
+        <h2
+          class="uppercase text-sm text-blue-600 dark:text-blue-400 tracking-wide"
         >
-        Optimice sus ventas y controle su negocio con un sistema de facturación eficiente y confiable.
-        </p><ul class="service-list">
-          <li>
-            <p
-              class="text-dark-700 dark:text-dark-200"
-            >
-              Personalización Avanzada: Desde la apariencia visual hasta las
-              funcionalidades específicas, cada aspecto se adapta a las
-              necesidades de su negocio.
-            </p>
-          </li>
+          Desarrollo a medida
+        </h2>
 
+        <h1 class="capitalize text-3xl md:text-4xl font-bold mt-2">
+          ⚙️ Optimiza tu negocio con
+          <span class="text-blue-600 dark:text-blue-400">
+            desarrollo web personalizado
+          </span>
+        </h1>
+
+        <p class="text-slate-700 dark:text-slate-200 my-6 leading-relaxed">
+          Optimiza tus procesos y automatiza tareas con sistemas creados a la
+          medida de tu negocio. Desarrollo de plataformas web y sistemas
+          internos adaptados a tus necesidades: facturación, control de ventas,
+          gestión de clientes y más. Diseñados para aumentar la productividad y
+          la eficiencia de tu empresa.
+        </p>
+
+        <!-- LISTA DE BENEFICIOS -->
+        <ul class="list-disc pl-5 space-y-3 text-slate-700 dark:text-slate-200">
           <li>
-            <p
-              class="text-dark-700 dark:text-dark-200"
-            >
-            Gestión de Productos: Administre sus productos de manera eficiente con un control detallado y simplificado, 
-            optimizando su inventario y facilitando la organización.
-            </p>
-          </li><li>
-            <p
-              class="text-dark-700 dark:text-dark-200"
-            >
-              Escalabilidad: Prepárese para el crecimiento con una plataforma
-              flexible que se adapta a las necesidades cambiantes de su negocio.
-            </p>
+            🔧 <strong>Funcionalidades específicas:</strong> cada módulo se diseña
+            según los requerimientos únicos de tu empresa.
+          </li>
+          <li>
+            📊 <strong>Panel de administración completo:</strong> controla datos,
+            reportes y usuarios desde una interfaz moderna e intuitiva.
+          </li>
+          <li>
+            🔒 <strong>Seguridad y rendimiento profesional:</strong> sistemas robustos
+            con autenticación, control de acceso y respaldo de datos.
+          </li>
+          <li>
+            📈 <strong>Escalabilidad asegurada:</strong> crece sin límites con una
+            arquitectura lista para evolucionar junto a tu negocio.
           </li>
         </ul>
-      </section><aside class="min-w-fit mt-8 md:mt-0">
+      </section>
+
+      <!-- LATERAL DE PROYECTOS -->
+      <aside class="min-w-fit mt-12 md:mt-0 md:w-[360px]">
         <h4
-          class="mb-4 font-bold text-lg md:text-2xl text-primary-600 dark:text-primary-400"
+          class="mb-4 font-bold text-lg md:text-2xl text-blue-600 dark:text-blue-400"
         >
-          Proyectos
-        </h4><div class="grid grid-cols-2 gap-4 place-content-center mb-8">
+          Proyectos a Medida
+        </h4>
+
+        <div class="grid grid-cols-2 gap-4 mb-8">
+          <!-- Proyecto 1 -->
           <a
-            href="#"
-            class="relative group hover:bg-dark-950 rounded-lg shadow-lg hover:shadow-2xl transition-shadow"
+            href="https://control-gasto-blazor.netlify.app/"
             target="_blank"
-            ><img
-            src={PortafolioImage.src}
-              alt="Dotase"
-              width="240"
-              height="210"
-              loading="lazy"
-              class="rounded-lg object-cover group-hover:opacity-50 transition-all"
-            /><span
-              class="absolute m-auto top-4 right-4 text-sm font-bold hidden group-hover:flex transition-all items-center gap-2 text-white"
-              >Sistema de ventas <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="size-4"
-                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
-                  d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"
-                ></path><path d="M11 13l9 -9"></path><path d="M15 4h5v5"
-                ></path></svg
-              ></span
-            ></a
-          ><a
-            href="#"
-            class="relative group hover:bg-dark-950 rounded-lg shadow-lg hover:shadow-2xl transition-shadow"
-            target="_blank"
-            ><img
-            src={AppGastosImage.src}
-              alt="Valentia Energía"
-              width="240"
-              height="210"
-              loading="lazy"
-              class="rounded-lg object-cover group-hover:opacity-50 transition-all"
-            /><span
-              class="absolute m-auto top-4 right-4 text-sm font-bold hidden group-hover:flex transition-all items-center gap-2 text-white"
-              >App Gastos<svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="size-4"
-                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
-                  d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"
-                ></path><path d="M11 13l9 -9"></path><path d="M15 4h5v5"
-                ></path></svg
-              ></span
-            ></a
+            class="relative group rounded-lg shadow-lg hover:shadow-2xl transition-all"
           >
-        
-        </div><a
-          href="https://api.whatsapp.com/send?phone=+86616696&text=Hola+%F0%9F%AB%A1%2C+estoy+interesado+en+el+desarrollo+de+un+sistema+para+mi+negocio+%F0%9F%8C%90+y+me+gustar%C3%ADa+ampliar+la+informaci%C3%B3n+sobre+este+servicio."
-          class="flex justify-center items-center gap-2 px-6 py-2 font-bold relative z-10 overflow-hidden before:content-[''] before:absolute before:top-0 before:left-0 before:h-full before:w-0 before:rounded-full before:bg-sky-600 before:-z-10 before:transition-all before:duration-300 before:hover:w-full text-slate-100 bg-blue-600 rounded-full hover:bg-slate-600 hover:shadow-md hover:shadow-blue-500/50 ease duration-500 max-w-56 mx-auto"
-          >Quiero mi Sistema</a
+            <img
+              src={BlazorAppGastos.src}
+              alt="Sistema de Ventas"
+              class="rounded-lg object-cover w-full h-[210px] group-hover:opacity-50 transition-all"
+              loading="lazy"
+            />
+            <span
+              class="absolute top-4 right-4 text-sm font-bold hidden group-hover:flex items-center gap-2 text-white"
+            >
+              Tus Finanzas - Blazor
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"
+                ></path>
+                <path d="M11 13l9 -9"></path>
+                <path d="M15 4h5v5"></path>
+              </svg>
+            </span>
+          </a>
+
+          <!-- Proyecto 2 -->
+          <a
+            href="https://github.com/JulioSancheZS/App-Gastos-Angular"
+            target="_blank"
+            class="relative group rounded-lg shadow-lg hover:shadow-2xl transition-all"
+          >
+            <img
+              src={AppGastosImage.src}
+              alt="App Gastos"
+              class="rounded-lg object-cover w-full h-[210px] group-hover:opacity-50 transition-all"
+              loading="lazy"
+            />
+            <span
+              class="absolute top-4 right-4 text-sm font-bold hidden group-hover:flex items-center gap-2 text-white"
+            >
+              App Gastos
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"
+                ></path>
+                <path d="M11 13l9 -9"></path>
+                <path d="M15 4h5v5"></path>
+              </svg>
+            </span>
+          </a>
+        </div>
+
+        <!-- Botón de acción -->
+        <a
+          href="https://api.whatsapp.com/send?phone=+50586616696&text=Hola+%F0%9F%AB%A1%2C+estoy+interesado+en+el+servicio+de+Desarrollo+Web+a+Medida+%E2%9A%99%EF%B8%8F+y+me+gustar%C3%ADa+saber+m%C3%A1s+informaci%C3%B3n."
+          class="flex justify-center items-center gap-2 px-6 py-3 font-bold relative z-10 overflow-hidden before:content-[''] before:absolute before:top-0 before:left-0 before:h-full before:w-0 before:rounded-full before:bg-blue-800 before:-z-10 before:transition-all before:duration-300 hover:before:w-full text-white bg-blue-600 rounded-full hover:bg-blue-700 hover:shadow-lg ease duration-500 max-w-56 mx-auto"
         >
+          ⚙️ Quiero mi sistema
+        </a>
       </aside>
     </article>
   </SectionContainer>
+
+  <!-- Landing Pages y Micrositios -->
+  <SectionContainer class="py-24 pb-24">
+    <article
+      id="landing-pages"
+      class="container py-24 mx-auto px-4 lg:w-[1114px] md:flex md:gap-8 md:items-start"
+    >
+      <!-- SECCIÓN PRINCIPAL (texto izquierda) -->
+      <section class="flex-1">
+        <h2
+          class="uppercase text-sm text-blue-600 dark:text-blue-400 tracking-wide"
+        >
+          Landing Pages y Micrositios
+        </h2>
+
+        <h1 class="capitalize text-3xl md:text-4xl font-bold mt-2">
+          Potencia tus campañas
+          <span class="text-blue-600 dark:text-blue-400">
+            con páginas de alto impacto
+          </span>
+        </h1>
+
+        <p class="text-slate-700 dark:text-slate-200 my-6 leading-relaxed">
+          Diseños enfocados en captar la atención y convertir visitantes en
+          clientes potenciales. Ideales para promociones, lanzamientos, campañas
+          publicitarias o para mostrar tu portafolio de manera profesional.
+        </p>
+
+        <!-- LISTA DE BENEFICIOS -->
+        <ol class="list-none pl-0 space-y-4 text-slate-700 dark:text-slate-200">
+          <li class="flex items-start gap-3">
+            <span class="text-blue-600 text-xl">🎯</span>
+            <p>
+              <strong>Diseño Enfocado en Conversión:</strong> cada elemento está
+              optimizado para impulsar tus resultados.
+            </p>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-blue-600 text-xl">📱</span>
+            <p>
+              <strong>Totalmente Responsive:</strong> se adapta a cualquier dispositivo
+              garantizando una experiencia perfecta.
+            </p>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-blue-600 text-xl">💬</span>
+            <p>
+              <strong>Contacto Directo:</strong> formularios integrados o conexión
+              instantánea vía WhatsApp.
+            </p>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-blue-600 text-xl">⚡</span>
+            <p>
+              <strong>Optimización SEO:</strong> carga rápida y estructura lista
+              para posicionarse en buscadores.
+            </p>
+          </li>
+        </ol>
+      </section>
+
+      <!-- LATERAL DE PROYECTOS (derecha) -->
+      <aside class="min-w-fit mt-12 md:mt-0 md:w-[360px]">
+        <h4
+          class="mb-4 font-bold text-lg md:text-2xl text-blue-600 dark:text-blue-400"
+        >
+          Proyectos
+        </h4>
+
+        <div class="grid grid-cols-1 gap-4 mb-8">
+          <!-- Proyecto único de portafolio -->
+          <a
+            href="#"
+            target="_blank"
+            class="relative group rounded-lg shadow-lg hover:shadow-2xl transition-all"
+          >
+            <img
+              src={PortafolioImage.src}
+              alt="Portafolio Profesional"
+              class="rounded-lg object-cover w-full h-[210px] group-hover:opacity-50 transition-all"
+              loading="lazy"
+            />
+            <span
+              class="absolute top-4 right-4 text-sm font-bold hidden group-hover:flex items-center gap-2 text-white"
+            >
+              Portafolio Profesional
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"
+                ></path>
+                <path d="M11 13l9 -9"></path>
+                <path d="M15 4h5v5"></path>
+              </svg>
+            </span>
+          </a>
+        </div>
+
+        <!-- Botón de acción -->
+        <a
+          href="https://api.whatsapp.com/send?phone=+50586616696&text=Hola+⚡,+me+interesa+una+Landing+Page+o+Micrositio+para+mi+portafolio🚀"
+          class="flex justify-center items-center gap-2 px-6 py-3 font-bold relative z-10 overflow-hidden before:content-[''] before:absolute before:top-0 before:left-0 before:h-full before:w-0 before:rounded-full before:bg-blue-800 before:-z-10 before:transition-all before:duration-300 hover:before:w-full text-white bg-blue-600 rounded-full hover:bg-blue-700 hover:shadow-lg ease duration-500 max-w-56 mx-auto"
+        >
+          Quiero mi Landing
+        </a>
+      </aside>
+    </article>
+  </SectionContainer>
+
+  <!-- Aplicaciones Móviles Android (Kotlin) -->
+<SectionContainer class="py-24 pb-24">
+  <article
+    id="apps-moviles"
+    class="container py-24 mx-auto px-4 lg:w-[1114px] md:flex md:gap-8 md:items-start md:flex-row-reverse"
+  >
+    <!-- SECCIÓN PRINCIPAL (texto derecha) -->
+    <section class="flex-1">
+      <h2 class="uppercase text-sm text-blue-600 dark:text-blue-400 tracking-wide">
+        Aplicaciones Móviles Android (Kotlin)
+      </h2>
+
+      <h1 class="capitalize text-3xl md:text-4xl font-bold mt-2">
+        Soluciones móviles
+        <span class="text-blue-600 dark:text-blue-400">
+          personalizadas para tu negocio
+        </span>
+      </h1>
+
+      <p class="text-slate-700 dark:text-slate-200 my-6 leading-relaxed">
+        Desarrollo de aplicaciones nativas para Android utilizando Kotlin,
+        enfocadas en ofrecer una experiencia fluida, moderna y funcional.
+      </p>
+
+      <!-- LISTA DE BENEFICIOS CON ICONOS -->
+      <ol class="list-none pl-0 space-y-4 text-slate-700 dark:text-slate-200">
+        <li class="flex items-start gap-3">
+          <span class="text-blue-600 text-xl">📲</span>
+          <p>
+            <strong>Diseño UI/UX Nativo:</strong> interfaz profesional y experiencia adaptada a Android.
+          </p>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-600 text-xl">🔗</span>
+          <p>
+            <strong>Integración con APIs:</strong> conexión con servicios web y sistemas externos.
+          </p>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-600 text-xl">💬</span>
+          <p>
+            <strong>Notificaciones y Login:</strong> sincronización de datos y comunicación directa con el usuario.
+          </p>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-600 text-xl">🧩</span>
+          <p>
+            <strong>Escalabilidad y Mantenimiento:</strong> tu app crecerá con tu negocio y estará siempre optimizada.
+          </p>
+        </li>
+      </ol>
+
+      <p class="text-slate-700 dark:text-slate-200 mt-4">
+        Convierte tu idea en una app real que conecte con tus usuarios y resuelva problemas del día a día.
+      </p>
+    </section>
+
+    <!-- LATERAL DE PROYECTOS (izquierda) -->
+    <aside class="min-w-fit mt-12 md:mt-0 md:w-[360px]">
+      <h4 class="mb-4 font-bold text-lg md:text-2xl text-blue-600 dark:text-blue-400">
+        Proyectos
+      </h4>
+
+      <div class="grid grid-cols-1 gap-4 mb-8">
+        <!-- Proyecto de app -->
+        <a
+          href="#"
+          target="_blank"
+          class="relative group rounded-lg shadow-lg hover:shadow-2xl transition-all"
+        >
+          <img
+            src={AppPedidosAndroid.src}
+            alt="Aplicación Android"
+            class="rounded-lg object-cover w-full h-[210px] group-hover:opacity-50 transition-all"
+            loading="lazy"
+          />
+          <span
+            class="absolute top-4 right-4 text-sm font-bold hidden group-hover:flex items-center gap-2 text-white"
+          >
+            Aplicación Android
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+              <path d="M11 13l9 -9"></path>
+              <path d="M15 4h5v5"></path>
+            </svg>
+          </span>
+        </a>
+      </div>
+
+      <!-- Botón de acción -->
+      <a
+        href="https://api.whatsapp.com/send?phone=+50586616696&text=Hola+📱,+me+interesa+desarrollar+una+app+Android+para+mi+negocio🚀"
+        class="flex justify-center items-center gap-2 px-6 py-3 font-bold relative z-10 overflow-hidden before:content-[''] before:absolute before:top-0 before:left-0 before:h-full before:w-0 before:rounded-full before:bg-blue-800 before:-z-10 before:transition-all before:duration-300 hover:before:w-full text-white bg-blue-600 rounded-full hover:bg-blue-700 hover:shadow-lg ease duration-500 max-w-56 mx-auto"
+      >
+        Quiero mi App
+      </a>
+    </aside>
+  </article>
+</SectionContainer>
 
 
 </Layout>

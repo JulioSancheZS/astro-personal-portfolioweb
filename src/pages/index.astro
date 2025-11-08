@@ -11,13 +11,14 @@ import SectionContainer from "../components/SectionContainer.astro";
 import Tecnologias from "../components/Tecnologias.astro";
 import JulioPic from '../assets/juliopic.jpeg';
 import JulioFoto from '../assets/profile-pic.png';
-import Whatsapp from "../components/icons/Whatsapp.astro";
-
+import LogoJulio from '../assets/logopersonal.png';
 ---
 
 <Layout
-  title="Porfolio de Julio | Full Stack Developer"
-  description="Contratame para crear tu aplicación web o móvil."
+    title="Servicios Digitales Profesionales"
+    description="Desarrollo web, apps Android y landing pages diseñadas para impulsar tu negocio y presencia online."
+    image={LogoJulio.src}
+    url="https://portfolio-dev-julio.netlify.app/"
 >
   <main class="px-2">
     <SectionContainer class="py-24 pb-24">
@@ -61,7 +62,7 @@ import Whatsapp from "../components/icons/Whatsapp.astro";
         >Software Developer
       </span>
       <h2 class="text-2xl text-wrap lg:text-2xl max-w-[700px] pt-10">
-        +3 años de experiencia, <span class="text-yellow-200/90 opacity-80"
+        +4 años de experiencia, <span class="text-yellow-200/90 opacity-80"
           >Ingeniero en Ciencias de la Computación y Desarrollador de Software.</span
         >
         Especializado en el diseño y desarrollo de soluciones tecnológicas creativas
@@ -77,24 +78,14 @@ import Whatsapp from "../components/icons/Whatsapp.astro";
           <GitHub class="size-5 md:size-6" />
           GitHub
         </SocialPill>
-        <SocialPill href="https://api.whatsapp.com/send?phone=86616696">
-          <Whatsapp class="size-6 md:size-6" />
-          Contactame
-        </SocialPill>
       </nav>
-    </SectionContainer>
-
-    <SectionContainer id="experiencia" class="py-16 pb-10">
-      <h2 class="text-4xl font-semibold mb-4 flex gap-x-2 items-center">
-        Experiencia Laboral
-      </h2>
-      <Experience />
     </SectionContainer>
 
     <SectionContainer id="proyectos" class="py-16 pb-10">
       <h2 class="text-4xl font-semibold mb-4 flex gap-x-2 items-center">
         Proyectos
       </h2>
+      
       <Projects />
 
       <div class="flex justify-center items-center md:flex bottom-4 w-full">
@@ -122,6 +113,13 @@ import Whatsapp from "../components/icons/Whatsapp.astro";
           </svg>
         </a>
       </div>
+    </SectionContainer>
+
+      <SectionContainer id="experiencia" class="py-16 pb-10">
+      <h2 class="text-4xl font-semibold mb-4 flex gap-x-2 items-center">
+        Experiencia Laboral
+      </h2>
+      <Experience />
     </SectionContainer>
 
     <SectionContainer class="pt-24 container mx-auto px-2 lg:w-[740px]" id="sobre-mi">

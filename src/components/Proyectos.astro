@@ -9,8 +9,15 @@ import CssIcon from './icons/Css.astro'
 import JavaScriptIcon from './icons/Javascript.astro'
 import AstroIcon from './icons/AstroIcon.astro'
 
+import BlazorIcon from './icons/Blazor.astro'
+import AndroidIcon from './icons/AndroidIcon.astro'
+import KotlinIcon from './icons/kotlin-svgrepo-com.astro'
+
 import PortafolioImg from '../assets/portafolioProyecto.png';
 import AppGastos from '../assets/appgastos.png';
+import BlazorAppGastos  from '../assets/blazorApp.png'
+import AppPedidosAndroid  from '../assets/appPedidosAndroid.png'
+
 
 
 const TAGS = {
@@ -53,16 +60,31 @@ const TAGS = {
     name:'Astro',
     class:'text-white bg-stone-900',
     icon: AstroIcon
+  },
+  BLAZOR: {
+    name:'Blazor',
+    class:'text-white bg-stone-900',
+    icon: BlazorIcon
+  },
+  ANDROID: {
+    name:'Android',
+    class:'text-white bg-stone-900',
+    icon: AndroidIcon
+  },
+   KOTLIN: {
+    name:'Kotlin',
+    class:'text-white bg-stone-900',
+    icon: KotlinIcon
   }
 };
 
 const PROJECTS = [
   {
-    title: "App gastos",
+    title: "App gastos Angular",
     description:
       "La aplicación ofrece una experiencia intuitiva para gestionar tus finanzas. Con una interfaz amigable, puedes registrar ingresos, gastos y establecer presupuestos personalizados para un control total y decisiones financieras informadas.",
-    link: "#",
-    github: "#",
+    link: "",
+    github: "https://github.com/JulioSancheZS/App-Gastos-Angular",
     image:
     AppGastos.src,
     tags: [TAGS.DOTNETCORE, TAGS.SQLSERVER, TAGS.ANGULAR, TAGS.TAILWIND],
@@ -72,12 +94,33 @@ const PROJECTS = [
     title: "Mi Portafolio",
     description:
     "Un portafolio web personal diseñado para mostrar mis trabajos, proyectos y habilidades como desarrollador. Creado con HTML, CSS (incluyendo Tailwind CSS), JavaScript y Astro, presenta un diseño moderno y responsivo. ¡Descubre más sobre mí y mis habilidades como desarrollador explorando este portafolio!",
-    link: "#",
-    github: "#",
+    link: "https://portfolio-dev-julio.netlify.app/",
+    github: "https://github.com/JulioSancheZS/astro-personal-portfolioweb",
     image: PortafolioImg.src,
     tags: [ TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.TAILWIND, TAGS.ASTRO],
     typeProject: "Frontend",
   },
+   {
+    title: "Mis Finanzas - Blazor",
+    description:
+    "Una aplicación web ligera de control de gastos, desarrollada con Blazor WebAssembly, MudBlazor y Local Storage. Permite registrar tus gastos e ingresos de manera sencilla y rápida, sin necesidad de servidor.",
+    link: "https://control-gasto-blazor.netlify.app/",
+    github: "https://github.com/JulioSancheZS/ControlDeGastosBlazor",
+    image: BlazorAppGastos.src,
+    tags: [ TAGS.BLAZOR,TAGS.DOTNETCORE],
+    typeProject: "Frontend",
+  },
+  {
+  title: "PedidosApp - Android",
+  description:
+    "Aplicación móvil desarrollada en Kotlin con Jetpack Compose. Permite gestionar pedidos de sopas de manera rápida e intuitiva, con una interfaz moderna y almacenamiento local.",
+  link: "",
+  github: "https://github.com/JulioSancheZS/PedidosApp-Kotlin",
+    image: AppPedidosAndroid.src,
+  tags: [TAGS.ANDROID, TAGS.KOTLIN],
+  typeProject: "Android App",
+}
+
 ];
 ---
 
@@ -113,11 +156,64 @@ const PROJECTS = [
           ))}
           
       </ul>
+
+      {(link || github) && (
+  <div class="flex flex-wrap gap-3 mt-5">
+    {link && (
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-2 text-sm font-semibold 
+               bg-primary-600/10 hover:bg-primary-600/20 
+               text-primary-700 dark:text-primary-400 
+               px-4 py-2 rounded-xl transition-all duration-300 
+               hover:scale-105 hover:shadow-md"
+      >
+        🌐 Ver proyecto
+      </a>
+    )}
+
+    {github && (
+      <a
+        href={github}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-2 text-sm font-semibold 
+               bg-dark-200/50 dark:bg-dark-800/50 
+               hover:bg-dark-300 dark:hover:bg-dark-700 
+               text-dark-800 dark:text-dark-100 
+               px-4 py-2 rounded-xl transition-all duration-300 
+               hover:scale-105 hover:shadow-md"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.8"
+          stroke="currentColor"
+          class="size-5"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 2C6.48 2 2 6.58 2 12.19c0 4.49 2.87 8.3 6.84 9.65.5.09.68-.23.68-.5v-1.77c-2.78.61-3.37-1.37-3.37-1.37-.45-1.17-1.1-1.48-1.1-1.48-.9-.63.07-.61.07-.61 1 .07 1.53 1.06 1.53 1.06.89 1.55 2.34 1.1 2.91.84.09-.66.35-1.1.63-1.35-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.38-2.04 1.01-2.76-.1-.26-.44-1.31.1-2.73 0 0 .84-.28 2.76 1.05A9.23 9.23 0 0 1 12 7.18c.85 0 1.7.12 2.49.35 1.91-1.34 2.75-1.05 2.75-1.05.55 1.42.21 2.47.1 2.73.63.72 1.01 1.64 1.01 2.76 0 3.94-2.33 4.8-4.56 5.06.36.33.67.95.67 1.91v2.83c0 .27.18.59.69.5A10.19 10.19 0 0 0 22 12.19C22 6.58 17.52 2 12 2z"
+          />
+        </svg>
+        GitHub
+      </a>
+    )}
+  </div>
+)}
+
+
     </div>
+
     <span class="absolute top-4 left-4 backdrop-blur-md bg-dark-600/50 py-1 px-2 rounded-full z-10 text-sm font-semibold text-dark-100"
       >{typeProject}
       </span>
       </div>
+
       )
     )
   }

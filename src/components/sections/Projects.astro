@@ -1,0 +1,95 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Badge from '../ui/Badge.astro';
+import Icon from '../ui/Icon.astro';
+import Card from '../ui/Card.astro';
+import Button from '../ui/Button.astro';
+import { PROJECTS } from '../../data/projects';
+
+const featuredProjects = PROJECTS.filter(p => p.featured);
+const otherProjects = PROJECTS.filter(p => !p.featured);
+---
+
+<section id="proyectos" class="py-20 md:py-28 animate-on-scroll">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <SectionHeading title="Proyectos & Casos de Estudio" subtitle="Ejemplos de cómo construyo productos desde la concepción hasta el despliegue." />
+
+    {featuredProjects.length > 0 && (
+      <div class="mb-12">
+        {featuredProjects.map((project) => (
+          <Card class="flex flex-col md:flex-row gap-8 items-center p-8 border-accent-900/50" hover={false}>
+            <div class="w-full md:w-1/2 rounded-xl overflow-hidden border border-surface-border">
+              <img
+                src={project.image}
+                alt={`Captura de ${project.title}`}
+                class="w-full h-auto object-cover opacity-90"
+                loading="lazy"
+              />
+            </div>
+            <div class="w-full md:w-1/2 flex flex-col items-start">
+              <span class="text-accent-400 text-sm font-semibold mb-2">Proyecto Destacado</span>
+              <h3 class="text-3xl font-bold text-white mb-4">{project.title}</h3>
+              <p class="text-primary-300 leading-relaxed mb-6">
+                {project.description}
+              </p>
+              <ul class="flex flex-wrap gap-2 mb-8">
+                {project.tags.map((tag) => (
+                  <Badge text={tag} />
+                ))}
+              </ul>
+              <div class="flex gap-4">
+                <Button href={`/proyectos/${project.slug}`} variant="primary" size="sm">
+                  Ver Detalles del Proyecto
+                  <Icon name="arrow-right" class="size-4" />
+                </Button>
+              </div>
+            </div>
+          </Card>
+        ))}
+      </div>
+    )}
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {otherProjects.map((project) => (
+        <Card class="group overflow-hidden flex flex-col h-full !p-0" hover={true}>
+          <div class="relative h-40 overflow-hidden border-b border-surface-border">
+            <img
+              src={project.image}
+              alt={`Captura de ${project.title}`}
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+              loading="lazy"
+            />
+            <span class="absolute top-3 left-3 backdrop-blur-md bg-surface/80 text-[10px] font-semibold text-primary-200 px-2.5 py-1 rounded-full border border-surface-border">
+              {project.type}
+            </span>
+          </div>
+
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-accent-400 transition-colors">
+              {project.title}
+            </h3>
+            <p class="text-sm text-primary-400 leading-relaxed line-clamp-3 mb-4">
+              {project.description}
+            </p>
+
+            <ul class="flex flex-wrap gap-1.5 mt-auto mb-5">
+              {project.tags.map((tag) => (
+                <Badge text={tag} class="text-[10px] py-0.5 px-2" />
+              ))}
+            </ul>
+
+            <div class="flex gap-4 border-t border-surface-border pt-4">
+              <a
+                href={`/proyectos/${project.slug}`}
+                class="flex items-center gap-1.5 text-xs font-semibold text-accent-400 hover:text-accent-300 transition-colors"
+              >
+                Ver Detalles
+                <Icon name="arrow-right" class="size-3.5" />
+              </a>
+            </div>
+          </div>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>

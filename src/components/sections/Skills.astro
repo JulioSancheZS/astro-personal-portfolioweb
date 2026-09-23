@@ -1,0 +1,50 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+import { SKILLS } from '../../data/skills';
+
+// Usamos íconos locales desde public/icons
+const categories = Object.values(SKILLS);
+---
+
+<section id="tecnologias" class="py-20 md:py-28 animate-on-scroll">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <SectionHeading title="Tecnologías" subtitle="El stack tecnológico y herramientas que domino para construir soluciones." />
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {categories.map((category) => (
+        <Card class="flex flex-col p-8">
+          <h3 class="text-2xl font-bold text-accent-400 text-center mb-8">{category.title}</h3>
+          
+          <div class="grid grid-cols-3 gap-y-8 gap-x-4">
+            {category.items.map((skill) => (
+              <div class="group flex flex-col items-center gap-3">
+                <div class="flex items-center justify-center size-12 rounded-xl transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-1">
+                  {skill.icon ? (
+                    <img
+                      src={skill.icon}
+                      alt={skill.name}
+                      class="w-full h-full object-contain drop-shadow-md"
+                      loading="lazy"
+                      decoding="async"
+                      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
+                    />
+                  ) : null}
+                  <span
+                    class={skill.icon ? "hidden" : "flex items-center justify-center w-full h-full rounded-xl text-lg font-bold"}
+                    style={`background-color: ${skill.color}20; color: ${skill.color};`}
+                  >
+                    {skill.name.substring(0, 2).toUpperCase()}
+                  </span>
+                </div>
+                <span class="text-xs text-primary-200 font-medium text-center transition-colors group-hover:text-white">
+                  {skill.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,6 +1,6 @@
 ---
 import '@fontsource-variable/onest';
-import Header from '../components/layout/Header.astro';
+import HeaderClient from '../components/layout/HeaderClient.astro';
 import Footer from '../components/layout/Footer.astro';
 import BackToTop from '../components/ui/BackToTop.astro';
 import { SITE } from '../data/site';
@@ -13,10 +13,10 @@ interface Props {
 }
 
 const {
-  title = SITE.title,
-  description = SITE.description,
+  title = "Julio Sanchez - Soluciones de Software a Medida",
+  description = "Desarrollo sistemas a medida, automatizaciones y aplicaciones web para optimizar tu negocio.",
   image = `${SITE.url}logopersonal.png`,
-  url = SITE.url,
+  url = `${SITE.url}/clientes`,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, SITE.url);
@@ -49,24 +49,9 @@ const canonicalURL = new URL(Astro.url.pathname, SITE.url);
 
     <link rel="preconnect" href="https://cdn.simpleicons.org" />
     <link rel="dns-prefetch" href="https://cdn.simpleicons.org" />
-
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": SITE.author,
-      "jobTitle": "Software Developer",
-      "url": SITE.url,
-      "sameAs": [SITE.linkedin, SITE.github],
-    })} />
   </head>
   <body class="bg-surface text-primary-200 antialiased min-h-screen flex flex-col">
-    <a
-      href="#main-content"
-      class="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:p-4 focus:bg-primary-500 focus:text-white focus:rounded-lg focus:m-4"
-    >
-      Saltar al contenido principal
-    </a>
-    <Header />
+    <HeaderClient />
     <main id="main-content" class="flex-1">
       <slot />
     </main>
@@ -94,43 +79,6 @@ const canonicalURL = new URL(Astro.url.pathname, SITE.url);
         animatedElements.forEach((el) => observer.observe(el));
       }
 
-      // Counter animation
-      function initCounters() {
-        const counters = document.querySelectorAll('.counter');
-        if (counters.length === 0) return;
-
-        const counterObserver = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                const el = entry.target;
-                const target = parseInt(el.getAttribute('data-target'));
-                const suffix = el.getAttribute('data-suffix') || '';
-                const duration = 1500;
-                const step = target / (duration / 16);
-                let current = 0;
-
-                const updateCounter = () => {
-                  current += step;
-                  if (current < target) {
-                    el.textContent = Math.floor(current) + suffix;
-                    requestAnimationFrame(updateCounter);
-                  } else {
-                    el.textContent = target + suffix;
-                  }
-                };
-
-                updateCounter();
-                counterObserver.unobserve(el);
-              }
-            });
-          },
-          { threshold: 0.5 }
-        );
-
-        counters.forEach((counter) => counterObserver.observe(counter));
-      }
-
       // Parallax effect on Hero
       function initParallax() {
         const hero = document.querySelector('section:first-of-type');
@@ -146,7 +94,6 @@ const canonicalURL = new URL(Astro.url.pathname, SITE.url);
 
       document.addEventListener('DOMContentLoaded', () => {
         initScrollAnimations();
-        initCounters();
         initParallax();
       });
     </script>
@@ -176,7 +123,7 @@ const canonicalURL = new URL(Astro.url.pathname, SITE.url);
   }
 
   ::selection {
-    background-color: rgba(139, 92, 246, 0.3);
+    background-color: rgba(6, 182, 212, 0.3);
     color: white;
   }
 

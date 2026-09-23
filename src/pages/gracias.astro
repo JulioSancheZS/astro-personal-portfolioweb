@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/ui/Button.astro';
+import Icon from '../components/ui/Icon.astro';
+---
+
+<Layout title="Mensaje enviado - Julio Sanchez">
+  <section class="min-h-screen flex items-center justify-center px-4">
+    <div class="text-center max-w-md">
+      <div class="inline-flex items-center justify-center size-20 rounded-full bg-primary-500/10 mb-6">
+        <Icon name="mail" class="size-10 text-primary-400" />
+      </div>
+      <h1 class="text-3xl font-bold text-white mb-4">Mensaje enviado</h1>
+      <p class="text-slate-400 mb-8">
+        Gracias por contactarme. Te responderé lo antes posible.
+      </p>
+      <Button href="/" variant="primary">
+        <Icon name="arrow-right" class="size-4" />
+        Volver al inicio
+      </Button>
+    </div>
+  </section>
+</Layout>

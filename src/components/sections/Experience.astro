@@ -1,0 +1,76 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Badge from '../ui/Badge.astro';
+import Icon from '../ui/Icon.astro';
+import { EXPERIENCE } from '../../data/experience';
+---
+
+<section id="experiencia" class="py-20 md:py-28 animate-on-scroll">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <SectionHeading title="Experiencia" subtitle="Mi trayectoria profesional en el desarrollo de software." />
+
+    <div class="relative">
+      <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-surface-border" />
+
+      <div class="space-y-12">
+        {EXPERIENCE.map((exp, index) => (
+          <div class:list={[
+            "relative flex flex-col md:flex-row gap-8",
+            index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+          ]}>
+            <div class:list={[
+              "hidden md:block absolute left-1/2 -translate-x-1/2 w-3 h-3 rounded-full border-2 z-10",
+              exp.current
+                ? "bg-primary-500 border-primary-400 shadow-lg shadow-primary-500/50"
+                : "bg-surface border-surface-border"
+            ]} />
+
+            <div class:list={[
+              "flex-1 md:w-1/2 text-left",
+              index % 2 === 0 ? "md:pr-12" : "md:pl-12"
+            ]}>
+              <div class:list={[
+                "p-6 rounded-2xl bg-surface border transition-all duration-300",
+                exp.current
+                  ? "border-primary-500/30 shadow-lg shadow-primary-500/5"
+                  : "border-surface-border hover:border-surface-border/80"
+              ]}>
+                {exp.current && (
+                  <div class="flex items-center gap-2 mb-3">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                    </span>
+                    <span class="text-xs font-medium text-green-400 uppercase tracking-wider">Actualmente</span>
+                  </div>
+                )}
+
+                <h3 class="text-xl font-bold text-white">{exp.position}</h3>
+
+                <div class="flex items-center gap-2 mt-2 text-base text-primary-400 font-medium">
+                  <Icon name="briefcase" class="size-4" />
+                  {exp.company}
+                </div>
+
+                <div class="flex items-center gap-2 mt-2 text-sm text-primary-500">
+                  <Icon name="calendar" class="size-4" />
+                  {exp.period}
+                </div>
+
+                <p class="mt-4 text-base text-primary-300 leading-relaxed text-justify">
+                  {exp.description}
+                </p>
+
+                <div class="flex flex-wrap gap-1.5 mt-4">
+                  {exp.technologies.map((tech) => (
+                    <Badge text={tech} />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

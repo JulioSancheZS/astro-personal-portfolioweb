@@ -1,0 +1,65 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { PROJECTS } from '../../data/projects';
+import Badge from '../../components/ui/Badge.astro';
+import Button from '../../components/ui/Button.astro';
+import Icon from '../../components/ui/Icon.astro';
+
+export function getStaticPaths() {
+  return PROJECTS.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+---
+
+<Layout title={`${project.title} - Julio Sanchez`} description={project.description}>
+  <main class="pt-32 pb-20">
+    <article class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="mb-8">
+        <a href="/#proyectos" class="inline-flex items-center gap-2 text-primary-400 hover:text-accent-400 transition-colors mb-6 text-sm font-medium">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+          Volver a Proyectos
+        </a>
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">{project.title}</h1>
+        <p class="text-xl text-primary-300 mb-6">{project.description}</p>
+        
+        <div class="flex flex-wrap gap-2 mb-8">
+          <Badge text={project.type} class="bg-surface-elevated border-surface-border text-primary-300" />
+          {project.tags.map((tag) => (
+            <Badge text={tag} />
+          ))}
+        </div>
+
+        <div class="flex flex-wrap gap-4">
+          {project.link && project.link !== "#" && (
+            <Button href={project.link} variant="primary" target="_blank" rel="noopener noreferrer">
+              Ver Aplicación en Vivo
+              <Icon name="external-link" class="size-4" />
+            </Button>
+          )}
+          {project.github && project.github !== "#" && (
+            <Button href={project.github} variant="secondary" target="_blank" rel="noopener noreferrer">
+              Ver Código Fuente
+              <Icon name="github" class="size-4" />
+            </Button>
+          )}
+        </div>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden border border-surface-border mb-12 shadow-2xl shadow-accent-900/20">
+        <img
+          src={project.image}
+          alt={`Captura de ${project.title}`}
+          class="w-full h-auto"
+        />
+      </div>
+
+      <div class="prose prose-invert prose-lg max-w-none text-primary-200">
+        <Fragment set:html={project.content} />
+      </div>
+    </article>
+  </main>
+</Layout>

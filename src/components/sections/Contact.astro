@@ -1,0 +1,81 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Button from '../ui/Button.astro';
+import Icon from '../ui/Icon.astro';
+import { SITE } from '../../data/site';
+---
+
+<section id="contacto" class="py-20 md:py-28 animate-on-scroll">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <SectionHeading
+      title="Trabajemos juntos"
+      subtitle="¿Tienes un proyecto en mente? ¿Necesitas un desarrollador para tu equipo?"
+      align="center"
+    />
+
+    <div class="max-w-xl mx-auto">
+      <div class="flex flex-wrap justify-center gap-4 mb-10">
+        <Button href={`mailto:${SITE.email}`} variant="secondary">
+          <Icon name="mail" class="size-4" />
+          Email
+        </Button>
+        <Button href={SITE.linkedin} variant="secondary" target="_blank" rel="noopener noreferrer">
+          <Icon name="linkedin" class="size-4" />
+          LinkedIn
+        </Button>
+        <Button href={SITE.github} variant="secondary" target="_blank" rel="noopener noreferrer">
+          <Icon name="github" class="size-4" />
+          GitHub
+        </Button>
+        <Button href={`https://api.whatsapp.com/send?phone=${SITE.whatsapp.replace('+', '')}`} variant="secondary" target="_blank" rel="noopener noreferrer">
+          <Icon name="whatsapp" class="size-4" />
+          WhatsApp
+        </Button>
+      </div>
+
+      <form
+        class="space-y-4"
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        action="/gracias"
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="hidden">
+          <label>No llenar: <input name="bot-field" /></label>
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <input
+            type="text"
+            name="name"
+            placeholder="Tu nombre o empresa"
+            required
+            class="w-full px-4 py-3 rounded-xl bg-surface-elevated border border-surface-border text-primary-200 placeholder-primary-600 focus:outline-none focus:border-accent-500/50 focus:ring-1 focus:ring-accent-500/25 transition-colors text-sm"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Tu email"
+            required
+            class="w-full px-4 py-3 rounded-xl bg-surface-elevated border border-surface-border text-primary-200 placeholder-primary-600 focus:outline-none focus:border-accent-500/50 focus:ring-1 focus:ring-accent-500/25 transition-colors text-sm"
+          />
+        </div>
+        <textarea
+          name="message"
+          placeholder="Cuéntame sobre tu proyecto o el problema de negocio que necesitas resolver..."
+          rows="4"
+          required
+          class="w-full px-4 py-3 rounded-xl bg-surface-elevated border border-surface-border text-primary-200 placeholder-primary-600 focus:outline-none focus:border-accent-500/50 focus:ring-1 focus:ring-accent-500/25 transition-colors text-sm resize-none"
+        ></textarea>
+        <div class="flex justify-center mt-6">
+          <Button type="submit" variant="accent" class="w-full sm:w-auto">
+            Enviar mensaje
+            <Icon name="arrow-right" class="size-4" />
+          </Button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

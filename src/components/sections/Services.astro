@@ -1,0 +1,94 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Button from '../ui/Button.astro';
+import Icon from '../ui/Icon.astro';
+import Card from '../ui/Card.astro';
+import { SITE } from '../../data/site';
+
+const WHATSAPP_BASE = `https://api.whatsapp.com/send?phone=${SITE.whatsapp.replace('+', '')}`;
+
+const SERVICES = [
+  {
+    title: "Desarrollo de APIs & Backend",
+    description: "Arquitecturas robustas para conectar sistemas, integrar bases de datos y manejar lógica de negocio compleja.",
+    features: ["REST APIs seguras", "Integración de sistemas", "Rendimiento óptimo"],
+    cta: `${WHATSAPP_BASE}&text=Hola%2C+necesito+ayuda+con+el+desarrollo+de+una+API.`,
+    ctaText: "Consultar",
+    icon: "code",
+    color: "from-primary-500/10 to-transparent",
+  },
+  {
+    title: "Automatización de Procesos",
+    description: "Optimización de flujos de trabajo internos mediante herramientas personalizadas que ahorran tiempo y reducen errores.",
+    features: ["Digitalización de tareas", "Sistemas de facturación", "Control operativo"],
+    cta: `${WHATSAPP_BASE}&text=Hola%2C+quiero+automatizar+un+proceso+en+mi+negocio.`,
+    ctaText: "Consultar",
+    icon: "sparkles",
+    color: "from-accent-500/10 to-transparent",
+  },
+  {
+    title: "Dashboards & Apps Web",
+    description: "Plataformas modernas para la gestión administrativa, visualización de datos y control financiero.",
+    features: ["Paneles administrativos", "Reportes en tiempo real", "Diseño responsivo"],
+    cta: `${WHATSAPP_BASE}&text=Hola%2C+necesito+una+aplicación+web+o+dashboard.`,
+    ctaText: "Consultar",
+    icon: "briefcase",
+    color: "from-primary-600/10 to-transparent",
+  },
+  {
+    title: "Modernización de Sistemas",
+    description: "Migración de aplicaciones legacy a tecnologías web modernas, seguras y altamente escalables.",
+    features: ["De Legacy a Web", "Bases de datos relacionales", "Sin pérdida de datos"],
+    cta: `${WHATSAPP_BASE}&text=Hola%2C+necesito+modernizar+un+sistema+antiguo.`,
+    ctaText: "Consultar",
+    icon: "download",
+    color: "from-accent-600/10 to-transparent",
+  },
+];
+---
+
+<section id="servicios" class="py-20 md:py-28 animate-on-scroll">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <SectionHeading
+      title="Soluciones"
+      subtitle="Transformo tus problemas de negocio en herramientas de software eficientes."
+      align="center"
+    />
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+      {SERVICES.map((service) => (
+        <Card class="group relative overflow-hidden flex flex-col h-full" hover={true}>
+          <div class:list={["absolute top-0 right-0 w-64 h-64 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-bl-full -z-10 blur-3xl", service.color]} />
+          
+          <div class="flex items-start gap-4 mb-4">
+            <span class="flex items-center justify-center size-12 rounded-xl bg-surface-elevated text-primary-200 border border-surface-border">
+              <Icon name={service.icon} class="size-6" />
+            </span>
+            <div>
+              <h3 class="text-xl font-bold text-white mb-2">{service.title}</h3>
+              <p class="text-primary-400 text-sm leading-relaxed">
+                {service.description}
+              </p>
+            </div>
+          </div>
+
+          <ul class="space-y-3 mb-8 mt-4 flex-grow pl-[4.25rem]">
+            {service.features.map((feature) => (
+              <li class="flex items-center gap-3 text-sm text-primary-300">
+                <span class="size-1.5 rounded-full bg-accent-500 shrink-0" />
+                {feature}
+              </li>
+            ))}
+          </ul>
+
+          <div class="mt-auto pl-[4.25rem]">
+            <Button href={service.cta} variant="ghost" size="sm" target="_blank" rel="noopener noreferrer" class="!px-0 hover:!bg-transparent text-accent-400 hover:text-accent-300">
+              {service.ctaText}
+              <Icon name="arrow-right" class="size-4" />
+            </Button>
+          </div>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>

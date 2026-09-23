@@ -1,0 +1,50 @@
+---
+interface Props {
+  href?: string;
+  variant?: "primary" | "secondary" | "accent" | "ghost";
+  size?: "sm" | "md" | "lg";
+  class?: string;
+  target?: string;
+  rel?: string;
+  type?: "button" | "submit" | "reset";
+}
+
+const {
+  href,
+  variant = "primary",
+  size = "md",
+  class: className = "",
+  target,
+  rel,
+  type = "button",
+  ...rest
+} = Astro.props;
+
+const baseClasses = "inline-flex items-center justify-center gap-2 font-semibold rounded-xl transition-all duration-300 cursor-pointer";
+
+const variants = {
+  primary: "bg-gradient-to-r from-accent-500 to-accent2-500 hover:from-accent-400 hover:to-accent2-400 text-white shadow-lg shadow-accent-500/30 hover:shadow-accent-400/50 hover:scale-[1.02] active:scale-[0.98] border border-white/10",
+  secondary: "bg-surface-elevated hover:bg-surface-elevated/80 text-primary-200 border border-surface-border hover:border-accent-500/50 hover:shadow-[0_0_15px_rgba(6,182,212,0.15)] hover:scale-[1.02] active:scale-[0.98]",
+  accent: "bg-accent2-600 hover:bg-accent2-500 text-white shadow-lg shadow-accent2-600/30 hover:shadow-accent2-500/50 hover:scale-[1.02] active:scale-[0.98]",
+  ghost: "text-primary-400 hover:text-accent-400 hover:bg-surface-elevated",
+};
+
+const sizes = {
+  sm: "px-4 py-2 text-sm",
+  md: "px-6 py-3 text-base",
+  lg: "px-8 py-4 text-lg",
+};
+
+const Tag = href ? "a" : "button";
+---
+
+<Tag
+  href={href}
+  type={!href ? type : undefined}
+  class:list={[baseClasses, variants[variant], sizes[size], className]}
+  target={target}
+  rel={rel}
+  {...rest}
+>
+  <slot />
+</Tag>

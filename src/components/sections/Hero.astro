@@ -1,0 +1,71 @@
+---
+import Icon from '../ui/Icon.astro';
+import Button from '../ui/Button.astro';
+---
+
+<section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+  <div class="absolute inset-0 -z-10">
+    <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-accent-500/20 rounded-full blur-[120px] mix-blend-screen opacity-60" />
+    <div class="absolute top-40 left-0 w-[500px] h-[500px] bg-accent2-500/10 rounded-full blur-[100px] mix-blend-screen opacity-50" />
+  </div>
+
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <div class="flex flex-col items-center text-center gap-8">
+      <div class="animate-fade-in">
+        <span class="inline-flex items-center gap-2 rounded-full bg-accent-500/10 border border-accent-500/30 px-4 py-1.5 text-sm text-accent-400 font-medium shadow-[0_0_15px_rgba(6,182,212,0.15)]">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-accent-500"></span>
+          </span>
+          Disponible para trabajar
+        </span>
+      </div>
+
+      <div class="relative animate-fade-in mt-4">
+        <div class="absolute inset-0 bg-gradient-to-br from-accent-500/30 to-accent2-500/30 rounded-full blur-2xl animate-pulse-glow" />
+        <img
+          src="/logopersonal.png"
+          alt="Julio Sanchez - Logo"
+          class="relative h-28 md:h-32 w-auto drop-shadow-[0_0_25px_rgba(6,182,212,0.4)]"
+          width="128"
+          height="128"
+          decoding="async"
+        />
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-[1.1] animate-slide-up max-w-4xl">
+        Construyo software que
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 via-accent2-400 to-accent-400">
+          resuelve problemas reales
+        </span>
+      </h1>
+
+      <p class="text-lg md:text-xl text-primary-300 max-w-2xl leading-relaxed animate-slide-up-delayed opacity-0">
+        Transformo necesidades de negocio en <strong class="text-white font-semibold">soluciones escalables</strong>. 
+        Más de 5 años creando sistemas empresariales robustos y aplicaciones web modernas.
+      </p>
+
+      <div class="flex flex-col sm:flex-row justify-center gap-4 w-full sm:w-auto animate-slide-up-delayed opacity-0">
+        <Button href="#contacto" variant="primary" class="w-full sm:w-auto px-8">
+          Hablemos de tu proyecto
+          <Icon name="mail" class="size-4" />
+        </Button>
+        <Button href="#proyectos" variant="secondary" class="w-full sm:w-auto px-8">
+          Ver proyectos
+          <Icon name="arrow-right" class="size-4" />
+        </Button>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-x-6 gap-y-3 mt-4 text-sm text-primary-400 font-medium animate-slide-up-delayed opacity-0">
+        <span class="flex items-center gap-2">
+          <Icon name="briefcase" class="size-4 text-accent-400" />
+          Sistemática Internacional
+        </span>
+        <span class="flex items-center gap-2">
+          <Icon name="code" class="size-4 text-accent2-400" />
+          .NET &middot; SQL &middot; React
+        </span>
+      </div>
+    </div>
+  </div>
+</section>

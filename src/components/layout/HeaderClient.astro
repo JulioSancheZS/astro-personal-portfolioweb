@@ -1,0 +1,144 @@
+---
+import Icon from '../ui/Icon.astro';
+import { SITE } from '../../data/site';
+
+const NAV_ITEMS = [
+  { href: "#servicios", label: "Servicios" },
+  { href: "#casos-de-exito", label: "Casos de Éxito" },
+  { href: "#contacto", label: "Contacto" },
+];
+---
+
+<header class="fixed top-0 left-0 w-full z-50 backdrop-blur-lg bg-[#0a0a0f]/80 border-b border-surface-border/50">
+  <nav class="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
+    <a href="/clientes" class="flex items-center gap-2 group" aria-label="Ir al inicio">
+      <span class="text-xl font-bold text-white group-hover:text-accent-400 transition-colors">
+        Julio Sánchez<span class="text-accent-500">.</span>
+      </span>
+    </a>
+
+    <ul class="hidden md:flex items-center gap-8">
+      {NAV_ITEMS.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            class="nav-link text-sm text-slate-400 hover:text-white transition-colors"
+            data-section={item.href.replace('#', '')}
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <div class="flex items-center gap-3">
+      <a
+        href={`https://api.whatsapp.com/send?phone=${SITE.whatsapp.replace('+', '')}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hidden sm:flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent-500/10 text-accent-400 hover:bg-accent-500/20 transition-colors text-sm font-semibold border border-accent-500/30"
+      >
+        <Icon name="whatsapp" class="size-4" />
+        Hablemos
+      </a>
+
+      <button
+        id="menu-toggle"
+        class="md:hidden p-2 text-slate-400 hover:text-white transition-colors"
+        aria-label="Abrir menu de navegacion"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <Icon name="menu" class="size-6" id="menu-icon-open" />
+        <Icon name="close" class="size-6 hidden" id="menu-icon-close" />
+      </button>
+    </div>
+  </nav>
+
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden border-t border-surface-border/50 bg-[#0a0a0f]/95 backdrop-blur-lg"
+  >
+    <ul class="flex flex-col items-center gap-6 py-8">
+      {NAV_ITEMS.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            class="mobile-nav-link text-slate-300 hover:text-white transition-colors font-medium"
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+    <div class="flex justify-center pb-6">
+      <a
+        href={`https://api.whatsapp.com/send?phone=${SITE.whatsapp.replace('+', '')}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-2 px-6 py-2 rounded-full bg-accent-500/10 text-accent-400 transition-colors font-semibold border border-accent-500/30"
+      >
+        <Icon name="whatsapp" class="size-5" />
+        Agendar Llamada
+      </a>
+    </div>
+  </div>
+</header>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('menu-icon-open');
+    const iconClose = document.getElementById('menu-icon-close');
+    const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+    function closeMenu() {
+      menu?.classList.add('hidden');
+      toggle?.setAttribute('aria-expanded', 'false');
+      iconOpen?.classList.remove('hidden');
+      iconClose?.classList.add('hidden');
+    }
+
+    toggle?.addEventListener('click', () => {
+      const isOpen = !menu?.classList.contains('hidden');
+      if (isOpen) {
+        closeMenu();
+      } else {
+        menu?.classList.remove('hidden');
+        toggle?.setAttribute('aria-expanded', 'true');
+        iconOpen?.classList.add('hidden');
+        iconClose?.classList.remove('hidden');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    // Active section indicator
+    const sections = document.querySelectorAll('section[id]');
+    const navLinksDesktop = document.querySelectorAll('.nav-link');
+
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinksDesktop.forEach((link) => {
+              link.classList.remove('text-white', 'font-medium');
+              link.classList.add('text-slate-400');
+              if (link.getAttribute('data-section') === id) {
+                link.classList.add('text-white', 'font-medium');
+                link.classList.remove('text-slate-400');
+              }
+            });
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: '-80px 0px -60% 0px' }
+    );
+
+    sections.forEach((section) => sectionObserver.observe(section));
+  });
+</script>

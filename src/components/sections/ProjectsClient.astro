@@ -1,0 +1,93 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Badge from '../ui/Badge.astro';
+import Icon from '../ui/Icon.astro';
+import Card from '../ui/Card.astro';
+import Button from '../ui/Button.astro';
+import { PROJECTS } from '../../data/projects';
+
+// Filtramos el portafolio en sí mismo, a los clientes les importan las soluciones de negocio reales
+const clientProjects = PROJECTS.filter(p => p.slug !== 'portafolio-profesional');
+const featuredProjects = clientProjects.filter(p => p.featured);
+const otherProjects = clientProjects.filter(p => !p.featured);
+---
+
+<section id="casos-de-exito" class="py-20 md:py-28 animate-on-scroll bg-surface-elevated/30">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <SectionHeading 
+      title="Casos de Éxito" 
+      subtitle="Ejemplos reales de cómo he ayudado a negocios a automatizar sus procesos y crecer." 
+    />
+
+    {featuredProjects.length > 0 && (
+      <div class="mb-12">
+        {featuredProjects.map((project) => (
+          <Card class="flex flex-col md:flex-row gap-8 items-center p-8 border-accent-900/50" hover={false}>
+            <div class="w-full md:w-1/2 rounded-xl overflow-hidden border border-surface-border">
+              <img
+                src={project.image}
+                alt={`Captura de ${project.title}`}
+                class="w-full h-auto object-cover opacity-90"
+                loading="lazy"
+              />
+            </div>
+            <div class="w-full md:w-1/2 flex flex-col items-start">
+              <span class="inline-flex items-center gap-1.5 text-accent-400 text-sm font-semibold mb-2">
+                <Icon name="sparkles" class="size-4" />
+                Caso Destacado
+              </span>
+              <h3 class="text-3xl font-bold text-white mb-4">{project.title}</h3>
+              <p class="text-primary-300 leading-relaxed mb-6">
+                {project.description}
+              </p>
+              
+              <div class="flex gap-4 mt-2">
+                <Button href={`/proyectos/${project.slug}`} variant="primary" size="sm">
+                  Ver cómo lo resolvimos
+                  <Icon name="arrow-right" class="size-4" />
+                </Button>
+              </div>
+            </div>
+          </Card>
+        ))}
+      </div>
+    )}
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {otherProjects.map((project) => (
+        <Card class="group overflow-hidden flex flex-col h-full !p-0" hover={true}>
+          <div class="relative h-48 overflow-hidden border-b border-surface-border">
+            <img
+              src={project.image}
+              alt={`Captura de ${project.title}`}
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+              loading="lazy"
+            />
+            <span class="absolute top-3 left-3 backdrop-blur-md bg-surface/90 text-[10px] font-semibold text-accent-400 px-3 py-1.5 rounded-full border border-surface-border uppercase tracking-wider">
+              {project.type === 'Mobile' ? 'App Móvil' : 'Aplicación Web'}
+            </span>
+          </div>
+
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-accent-400 transition-colors">
+              {project.title}
+            </h3>
+            <p class="text-sm text-primary-400 leading-relaxed mb-6">
+              {project.description}
+            </p>
+
+            <div class="border-t border-surface-border pt-4 mt-auto">
+              <a
+                href={`/proyectos/${project.slug}`}
+                class="flex items-center gap-1.5 text-sm font-semibold text-accent-400 hover:text-accent-300 transition-colors"
+              >
+                Leer el Caso de Estudio
+                <Icon name="arrow-right" class="size-4" />
+              </a>
+            </div>
+          </div>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>

@@ -17,7 +17,7 @@ export const PROJECTS: Project[] = [
     title: "Control de Gastos",
     description: "Aplicación integral de finanzas diseñada bajo la filosofía de Presupuesto Base Cero (Zero-Based Budgeting).",
     image: "/images/projects/dashboard.png",
-    link: "https://control-gasto-blazor.netlify.app/",
+    link: "https://control-gastos-nextjs-beige.vercel.app/",
     github: "#",
     tags: ["Next.js", "Supabase", "TypeScript", "Tailwind CSS"],
     type: "Full Stack",
